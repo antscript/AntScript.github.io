@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>[译] Swift中的引用类型和值类型 | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="single single-post postid-294 single-format-standard has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/" class="format-bubble" title="[译] Swift中的引用类型和值类型"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                        
+                        <div class="featured-media">
+                            <img width="766" height="284" src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/title.png" class="attachment-post-image wp-post-image" alt="[译] Swift中的引用类型和值类型" />
+                        </div>
+                        
+                        
+                        <h2 class="post-title">[译] Swift中的引用类型和值类型</h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <h5 id="导读-引用类型和值类型是编程中的一个重要却很基础的知识点-网络上也有很多关于两者的讨论-文章深入分析了两者的不同以及在swift中该如何选择使用的问题-推荐编程新兵及对引用类型和值类型有疑问的swift使用者阅读"><strong>导读</strong>：引用类型和值类型是编程中的一个重要却很基础的知识点，网络上也有很多关于两者的讨论，文章深入分析了两者的不同以及在Swift中该如何选择使用的问题，推荐编程新兵及对引用类型和值类型有疑问的Swift使用者阅读。</h5>
+
+<p>（文章略长，精读大概需要半小时到1小时）</p>
+
+<hr />
+
+<ul>
+<li><p>原文链接 ： <u><strong><a href="https://medium.com/capital-one-developers/reference-and-value-types-in-swift-de792db330b2">Reference and Value Types in Swift</a></strong></u>  (墙外)</p></li>
+
+<li><p><em>图片也出自原文章</em></p></li>
+</ul>
+
+<hr />
+
+<p><em>内容提纲</em></p>
+
+<ul>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter1">引用类型</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter2">值类型</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter3">拷贝语意</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter4">引用类型：隐式的数据共享</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter5">值类型：没有隐式的数据共享</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter6">不可变性</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter7">如何选择</a></li>
+<li><a href="https://antscript.com/post/2016-08-30-translation-reference-and-value-type-in-swift/#chapter8">结论</a></li>
+</ul>
+
+<h2 id="hugomore42"></h2>
+
+<p>翻译内容分割线</p>
+
+<hr />
+
+<h4 id="我们将在这篇文章探讨swift中引用类型和值类型的区别-介绍两者的概念和各自的优缺点-以及该如何使用">我们将在这篇文章探讨Swift中引用类型和值类型的区别，介绍两者的概念和各自的优缺点，以及该如何使用。</h4>
+
+<p><a name="chapter1"></a></p>
+
+<h2 id="引用类型"><strong>引用类型</strong></h2>
+
+<blockquote>
+<p>引用类型初始化后，无论是分配给变量还是常量，或是通过参数传递给函数，都将是同一个实例对象。</p>
+</blockquote>
+
+<p>Object是一个典型的引用类型，一旦初始化完成，我们不管是将它作为一个值进行分配还是传递，我们都是分配或传递了一个原始对象的引用（实际上它就是内存中的一块区域），引用类型的分配我们一般叫它浅拷贝。</p>
+
+<p>Swift中，用关键字class来定义objects</p>
+
+<pre><code>
+class PersonClass {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+var person = PersonClass(name: &quot;John Doe&quot;)
+</code></pre>
+
+<p><a name="chapter2"></a></p>
+
+<h2 id="值类型"><strong>值类型</strong></h2>
+
+<blockquote>
+<p>值类型每次分配给变量/常量或者作为参数传递到函数时，都会重新创建（复制）一个新的实例。</p>
+</blockquote>
+
+<p>所有的基本类型都是典型的值类型，常用的基本类型也是值类型的有：<strong>Int, Double, String, Array, Dictionary, Set</strong>。值类型每次初始化以后，当我们将它分配或者传递时，实际上是分配或传递了它的一个拷贝。</p>
+
+<p>Swift中最常用的值类型是structs,enums和tuples,值类型的分配叫做深拷贝。</p>
+
+<p><a name="chapter3"></a></p>
+
+<h2 id="拷贝语意"><strong>拷贝语意</strong></h2>
+
+<p>我会用图片来展示一个实际的例子以描述它们在语法上的区别。假设我们有一个树的数据结构：</p>
+
+<pre><code>
+class Node&lt;T: Comparable&gt; {
+    let value: T
+    var left: Node?
+    var right: Node?
+    convenience init(value: T) { […] }
+    init(value: T, left: Node?, right: Node?){ […] }
+
+    func add(value: T) { […] }
+}
+</code></pre>
+
+<p>我们创建一个二叉树的实例如下：</p>
+
+<pre><code>
+let binaryTree = Node(value: 8)
+tree.add(2)
+tree.add(13)
+</code></pre>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/2.jpeg" alt="一个二叉树实例" />
+现在，我们来看一下复制语意在行为上的区别。</p>
+
+<h4 id="浅拷贝-引用类型"><strong>浅拷贝（引用类型）</strong></h4>
+
+<p>复制一个引用类型时，Swift编译器将会复制实例的一个引用。但不包含实例的属性。因此，当对一个引用类型进行多次复制时，每一份复制都将共享同一份数据。</p>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/3.jpeg" alt="二叉树浅拷贝" /></p>
+
+<h4 id="深拷贝-值类型"><strong>深拷贝(值类型)</strong></h4>
+
+<p>当我们复制一个值类型时，Swift编译器将复制一个全新的实例，包括它的所有属性。整个过程会复制它所有的值类型属性。因此，当对一个值类型进行多次复制时，每次复制都会产生一个单独的、没有数据共享的新实例。</p>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/4.jpeg" alt="二叉树深拷贝" /></p>
+
+<p><a name="chapter4"></a></p>
+
+<h2 id="引用类型的问题-隐式的数据共享"><strong>引用类型的问题：隐式的数据共享</strong></h2>
+
+<p>为了说明引用类型的这种典型问题，我们先定义一个类用来表示2D平面上的一个点。</p>
+
+<pre><code>
+class PointClass {
+    var x: Int = 0
+    var y: Int = 0
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+}
+</code></pre>
+
+<p>现在，当我们实例化一个PointClass对象并将它分配给另一个变量时发生了什么？</p>
+
+<pre><code>
+var pointA = PointClass(x: 1, y: 3)
+var pointB = pointA
+</code></pre>
+
+<p>因为 <strong>PointClass</strong> 是一个引用类型，最后一句的变量声明实际上是把分配给pointA的引用也分配给了pointB。我们可以用下面的图来形象的描述上述情形：</p>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/5.png" alt="Reference type instances" /></p>
+
+<p>在这种情形下，pointA和pointB <strong>共享</strong> 同一个实例。因此，任何对pointA的改变也将反应到pointB上，反之亦然。这在很多情况下没什么问题，但它也会导致一些不太显而易见的bug。</p>
+
+<p>让我们来看一个很普遍的隐式数据共享问题。假设实例化了一个 view controller 1，并分配了一个 <strong>Person</strong> 对象（Person是一个model）的实例给它。这时，用户进行操作，我们push了另一个 view controller 2 到上一个 view controller 1 的上面，并把分配了同一个Person的引用实例给 view controller 2。我们可以想象下图这样的特殊情景：</p>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/6.jpeg" alt="Assigning a reference type to more than one view controller
+" /></p>
+
+<p>当两个 view controller 同时持有Person实例的用一个引用，如果我们在 view controlelr 2 中修改了Person的任何属性，将导致之前 view controller 1 中所持有Person的属性也同时被修改。因此，在view controller 2 中对数据模型的修改都将传递到 view controller 1 中。</p>
+
+<p>回到我们最初那个例子，要避免数据隐式共享的问题，一个方法是创建一个实例真正的拷贝，以代替将变量pointA直接进行新变量的分配赋值，如下手动创建拷贝并分配给pointB:</p>
+
+<pre><code>
+var pointB = pointA.copy()
+</code></pre>
+
+<p>现在，pointB 有了它自己独立的引用，它和 pointA 之间不再共享数据。这个技巧可正常工作，但还是有一些缺点：</p>
+
+<ul>
+<li><p>不得不：</p>
+
+<p>&ndash; 继承NSObject并实现NSCopying</p>
+
+<p>&ndash; 实现一个新的Copyable协议</p></li>
+
+<li><p>每一次赋值都需要显示的调用 copy() 带来的额外开销</p></li>
+
+<li><p>很容易就忘记调用 copy()</p></li>
+</ul>
+
+<p><a name="chapter5"></a></p>
+
+<h2 id="值类型实例-没有隐式共享"><strong>值类型实例：没有隐式共享</strong></h2>
+
+<p>当分配一个值类型时，编译器会自动创建（并返回）一个实例的拷贝。来看看发生了什么，我们用 <strong>struct</strong> (值类型) 的 PointStruct 来代替 <strong>class</strong> (引用类型) 的 Point 。</p>
+
+<pre><code>
+struct PointStruct {
+    var x: Int = 0
+    var y: Int = 0
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+}
+</code></pre>
+
+<p>现在，我们可以创建一个 PointStruct 的实例 ， 并将它分配给另一个变量。</p>
+
+<pre><code>
+var pointA = PointStruct(x: 1, y: 3)
+var pointB = pointA
+</code></pre>
+
+<p>因为 <strong>PointStruct</strong> 是值类型， 最后一行的声明会先创建一个PointA的拷贝，并将拷贝分配给了PointB。这就使得两个实例分配是安全并独立的。上述情形图示如下：
+<img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/7.png" alt="Values type instances
+" /></p>
+
+<p>我们看到 pointB 有它自己独立的引用，并且不会被 pointA 共享。这表明了使用值类型时，我们可以很容易的确保所有值类型的实例都是相互独立并且不会产生数据共享的。</p>
+
+<p>从性能方面看，使用值类型不会产生巨大的开销：</p>
+
+<blockquote>
+<p><strong>低成本的拷贝：</strong></p>
+
+<ul>
+<li><p>基础数据类型的复制花费恒定时间</p></li>
+
+<li><p>值类型（struct, enum, tuple）的复制花费恒定时间</p></li>
+</ul>
+
+<p><strong>可扩展的数据结构使用即写即拷</strong></p>
+
+<ul>
+<li><p>拷贝包含一个固定数量的引用计数操作</p></li>
+
+<li><p>这项技术常用于许多标准库的类型：String, Array, Set, Dictionary, &hellip;</p></li>
+</ul>
+</blockquote>
+
+<p>除了以上说的，值类型的另一个性能方面的优点是栈分配，它相对于堆分配（引用类型）有着更高的效率。这将使得访问更快但无法支持继承。</p>
+
+<p>有一点需要注意的是，只有当 structs, enums, tuples 它们的所有属性也都是值类型时，它们才是真正的值类型。如果它们包含引用类型的属性，则依然会有前面所提到的隐式数据共享的问题。</p>
+
+<p>看下面的 struct :</p>
+
+<pre><code>
+struct PersonView {
+    let person: PersonStruct
+    let view: UIView
+}
+</code></pre>
+
+<p>我们预期的目标是创建一个容器，用来跟踪一个 person， 并用一个视图来显示这个person的所有的相关信息。我们确信上面的代码是合理的；我们用 let 定义了属性，对吗？但很不幸，事实并非如此。因为 view 是一个引用（UIView是引用类型），我们依然可以修改它的属性！但这会造成一些更微妙的bugs。为了展示这个问题，我们创建一个 PersonView 的实例并进行一份拷贝：</p>
+
+<pre><code>
+let personViewA =
+    PersonView(person: PersonStruct(name: &quot;John Doe&quot;),
+               view: UIView())
+let personViewB = personViewA
+</code></pre>
+
+<p>由于 view 是引用类型，这将导致两个 PersonView 的实例共享了同一个 view 属性！所以当我们修改 view 的属性时，实际上最终修改的是 共享的 view 。通过下图可以更容易理解，再一次，我们又回到了隐式共享数据的问题讨论：
+<img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/20160830/8.jpeg" alt="Value type containing a reference type
+" /></p>
+
+<p><a name="chapter6"></a></p>
+
+<h2 id="引用类型-值类型和不可变性"><strong>引用类型，值类型和不可变性</strong></h2>
+
+<blockquote>
+<p><strong>不可变性：</strong> 一个实例的属性在创建之后不可更改。</p>
+</blockquote>
+
+<p>不可变性是函数式编程中很重要的一个严格约束。使用值类型可确保我们所创建的实例的状态是确定的，定义后即不可改变。不可变的对象有着一些有趣的优缺点。</p>
+
+<h4 id="优点"><strong>优点：</strong></h4>
+
+<ul>
+<li>不可变对象不会共享数据，因此，也不会在实例间共享状态。这就避免了不可预见的状态改变所带来的副作用。</li>
+<li>一个直接结果是对于前面的不可变对象Point来说是线程安全的。这意味着我们将不必担心竞争条件和线程同步。</li>
+<li>因为不可变对象保存其自身的状态，这将更容易的组织代码。</li>
+</ul>
+
+<h4 id="缺点"><strong>缺点：</strong></h4>
+
+<ul>
+<li>不可变性对机器模型来说不总是高效映射的。一个典型的例子是执行立即改变的算法（例如快速排序）。在保持原来性能的前提下，通过值类型来实现这些是不容易的。</li>
+</ul>
+
+<p>Swift中，我们可以使用两个不同的单词来定义变量：</p>
+
+<ul>
+<li><strong>var</strong> : 定义可变实例</li>
+<li><strong>let</strong> : 定义不可变实例</li>
+</ul>
+
+<p>上面两个关键字有着不同的行为，这取决于他们是用于引用还是值类型。</p>
+
+<h4 id="可变实例声明-var"><strong>可变实例声明：var</strong></h4>
+
+<p><strong>引用类型</strong>
+引用可以改变（mutable）：你可以改变实例本身和它的引用。</p>
+
+<p><strong>值类型</strong>
+实例可以改变（mutable）: 你可以改变实例的属性。</p>
+
+<p><strong>不可变实例声明：let</strong>
+<strong>引用类型</strong>
+引用将保持不变（immutable）: 你不能改变实例的引用，但可以改变实例它本身。</p>
+
+<p><strong>值类型</strong>
+实例保持不变（不可变的）：不能修改实例的属性，无论这个属性是用let还是var定义的。</p>
+
+<p><a name="chapter7"></a></p>
+
+<h2 id="引用类型和值类型该如何选择"><strong>引用类型和值类型该如何选择？</strong></h2>
+
+<p>一个很常见的问题：“我该在什么时候用引用类型，什么时候用值类型？” 你能在网上看到很多这样的讨论。以下是我喜欢的一些例子：</p>
+
+<ul>
+<li><u><a href="http://faq.sealedabstract.com/structs_or_classes/">Should I use a Swift struct or a class?</a></u></li>
+<li><u><a href="https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html">Friday Q&amp;A 2015–07–17: When to Use Swift Structs and Classes</a></u></li>
+<li><u><a href="https://www.objc.io/issues/16-swift/swift-classes-vs-structs/">A Warm Welcome to Structs and Value Types</a></u></li>
+<li><u><a href="http://owensd.io/blog/re-should-i-use-a-swift-struct-or-a-class/">RE: Should I use a Swift struct or a class?</a></u></li>
+<li><u><a href="http://troz.net/2016/03/structs-vs-classes/">Structs vs Classes</a></u></li>
+<li><u><a href="https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html">Reference vs Value Types in Swift: Part 1 / 2</a></u></li>
+</ul>
+
+<p>作为一个基本的规则，我们每次创建引用类型都要继承自 NSObject 。这是一个使用 Cocoa SDK 常见的场景。对于引用类型和值类型的使用，苹果还提供了一些通用规则。我总结如下：</p>
+
+<p><strong>以下情况使用引用类型：</strong></p>
+
+<ul>
+<li>NSObject的子类必须是class类型</li>
+<li>使用 === （全等于）来比较实例</li>
+<li>需要创建可共享和改变的状态</li>
+</ul>
+
+<p><strong>以下情况使用值类型</strong></p>
+
+<ul>
+<li>使用 == 来比较实例数据</li>
+<li>需要拷贝独立的状态</li>
+<li>代码会运行在跨多线程上 （避免显示同步）</li>
+</ul>
+
+<p>有趣的是，Swift 的标准库大量依赖于值类型：</p>
+
+<ul>
+<li>基本数据类型（Int,Double,String&hellip;）是值类型</li>
+<li>标准集合类型（Array,Dictionary,Set&hellip;)也是值类型</li>
+</ul>
+
+<p>通过查阅Swift标准库文档，可收集到有关上面讨论的准确数据：</p>
+
+<ul>
+<li>Classes = 4</li>
+<li>Structs = 103</li>
+<li>Enums = 9</li>
+</ul>
+
+<p>抛开上面的讨论，选择引用还是值类型真的应该取决于你要实现什么。一般说来，如果没有特殊的限制迫使你要选择引用类型，或者不确定哪个选择更合适时，可以先实现一个值类型的数据结构。如果以后需要，你可以相对简单的将它转化为一个引用类型。</p>
+
+<p><a name="chapter8"></a></p>
+
+<h2 id="总结"><strong>总结</strong></h2>
+
+<p>你可以从<u><a href="https://github.com/andrea-prearo/SwiftPlaygrounds/tree/master/ReferenceAndValueTypes">这里</a></u>下载本文中的代码（一个playground文件）。
+在这篇文章里，我们研究了引用类型和值类型的区别。然后深入探讨了隐式数据共享所带来的问题，以及如何用值类型代替引用类型以避免它们发生。</p>
+
+<p>我们还介绍了不可变性的概念以及在Swift中它们是如何适用的。最后，我们回顾了一些用例中如何简单的在引用和值类型之间做选择。对于其他所有情况，最好是通过试验来找出最好的选择。</p>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">2016-08-30 21:29:22 &#43;0800 CST</span>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="clear"></div>
+                <div class="post-nav">
+                    
+                    <a class="post-nav-older" title="Next post: [分享] 开发者提升英文阅读能力的workflow" href="https://antscript.com/post/2016-09-05-developer-learning-english/">&laquo; [分享] 开发者提升英文阅读能力的workflow</a>
+                    
+                    
+                    <a class="post-nav-newer" title="Previous post: Payer - 开发者的私房预算管理工具" href="https://antscript.com/post/2016-08-18-payer/">Payer - 开发者的私房预算管理工具 &raquo;</a>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+
+
+</body>
+
+</html>

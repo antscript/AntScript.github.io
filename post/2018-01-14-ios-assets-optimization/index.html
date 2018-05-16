@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>Swift中图片资源使用流程的优化 | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="single single-post postid-294 single-format-standard has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2018-01-14-ios-assets-optimization/" class="format-bubble" title="Swift中图片资源使用流程的优化"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                        
+                        <div class="featured-media">
+                            <img width="766" height="284" src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/2018-01-14/assets_title.jpg" class="attachment-post-image wp-post-image" alt="Swift中图片资源使用流程的优化" />
+                        </div>
+                        
+                        
+                        <h2 class="post-title">Swift中图片资源使用流程的优化</h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>去年发布的Xcode9支持在代码编辑中直接插入图片，类似如下效果</p>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/2018-01-14/assets_1.jpg" alt="" /></p>
+
+<p>但用了一段时间以后还是不太喜欢，换回了原来的方法。</p>
+
+<p></p>
+
+<p><br/>
+<br/>
+<em>本篇中许多实现细节已经在 <u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/">iOS中多语言本地化流程的优化</a></u>中写过，没再重复，若有疑问建议先阅读该文章。</em>
+<br/>
+<br/></p>
+
+<h4 id="传统的方法"><strong>传统的方法</strong></h4>
+
+<hr />
+
+<pre><code>// iOS
+let closeImage = UIImage(named: &quot;close&quot;)
+
+// macOS
+let closeImage = NSImage(named: NSImage.Name(&quot;close&quot;))
+</code></pre>
+
+<p><br/>
+是不是看上去都感觉心累。
+<br/>
+<br/>
+<br/></p>
+
+<h4 id="如何优化"><strong>如何优化</strong></h4>
+
+<hr />
+
+<p>思路和 <u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/">iOS中多语言本地化流程的优化</a></u>一样，使用脚本将资源文件映射到静态变量，即可直接调用：</p>
+
+<p>Build Phases中新建一个 <strong>Run Script</strong>，填入以下脚本：</p>
+
+<pre><code>
+# Assets.xcassets文件夹路径
+assetsFolder=&quot;${SRCROOT}/${PROJECT_NAME}/Assets.xcassets&quot;
+
+# 生成的swift文件路径（根据个人习惯修改）
+utilsFile=&quot;${SRCROOT}/${PROJECT_NAME}/Source/Utils/AssetsUtils.swift&quot;
+
+touch $utilsFile
+
+# 兼容iOS和macOS的处理
+echo -e &quot;#if os(OSX)\n    typealias Image     = NSImage\n    typealias ImageName = NSImage.Name\n#elseif os(iOS)\n    import UIKit\n\n    typealias Image     = UIImage\n    typealias ImageName = String\n#endif&quot; &gt; &quot;${utilsFile}&quot;
+
+# 使用extension来扩展Image
+echo -e &quot;\nextension Image {&quot; &gt;&gt; &quot;${utilsFile}&quot;
+
+# 遍历资源文件夹，将每个资源拼接成静态变量输出到swift文件中
+for folder in `ls $assetsFolder`
+do
+if [[ $folder =~ &quot;.imageset&quot; ]]
+then
+  asset=${folder/.imageset/}
+  echo &quot;    static var assets_${asset}: Image? { return Image(named: ImageName(\&quot;${asset}\&quot;)) }&quot; &gt;&gt; &quot;${utilsFile}&quot;
+fi
+done
+
+# 完成输出
+echo &quot;}&quot; &gt;&gt; &quot;${utilsFile}&quot;
+</code></pre>
+
+<ul>
+<li>第一次运行记得将<strong>AssetsUtils.swift</strong>加入到Xcode项目中</li>
+<li>将 <strong>Run Script</strong> 放在 <strong>Compile Sources</strong> 的上面，这样可以在编译代码前执行，如果出现错误也很容易定位。
+</br>
+</br>
+<img src="https://o2vkv3svi.qnssl.com/@/antscript.com/upload/images/2017-08-08/xcode_run_script.jpg" alt="run_script" />
+</br>
+</br></li>
+</ul>
+
+<p>脚本效果：</p>
+
+<p>AssetsUtils.swift</p>
+
+<pre><code>
+#if os(OSX)
+    typealias Image     = NSImage
+    typealias ImageName = NSImage.Name
+#elseif os(iOS)
+    import UIKit
+
+    typealias Image     = UIImage
+    typealias ImageName = String
+#endif
+
+extension Image {
+    static var assets_close: Image? { return Image(named: ImageName(&quot;close&quot;)) }
+}
+</code></pre>
+
+<p>使用</p>
+
+<pre><code>
+// iOS
+let closeImage = Image.assets_close
+
+// macOS
+let closeImage = Image.assets_close
+
+</code></pre>
+
+<p>当资源文件有修改时 <strong>⌘+B</strong> build一下就OK了。</p>
+
+<p></br></p>
+
+<p>如果你有其他更好的方式，欢迎邮件交流 antscript#gmail.com ：）。</p>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">2018-01-14 10:38:33 &#43;0800 CST</span>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="clear"></div>
+                <div class="post-nav">
+                    
+                    <a class="post-nav-older" title="Next post: Swift使用Decodable解析JSON时的一个小问题" href="https://antscript.com/post/2018-03-14-ios-decodable-empty-json/">&laquo; Swift使用Decodable解析JSON时的一个小问题</a>
+                    
+                    
+                    <a class="post-nav-newer" title="Previous post: Step by Step，一个周末入门机器学习" href="https://antscript.com/post/2017-12-28-step-by-step-machine-learning/">Step by Step，一个周末入门机器学习 &raquo;</a>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+
+
+</body>
+
+</html>

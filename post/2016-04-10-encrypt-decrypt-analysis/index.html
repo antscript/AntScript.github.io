@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>文件加 / 解密方案浅析 | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="single single-post postid-294 single-format-standard has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2016-04-10-encrypt-decrypt-analysis/" class="format-bubble" title="文件加 / 解密方案浅析"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                        
+                        <div class="featured-media">
+                            <img width="766" height="284" src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/encrypt1-766x437.jpg" class="attachment-post-image wp-post-image" alt="文件加 / 解密方案浅析" />
+                        </div>
+                        
+                        
+                        <h2 class="post-title">文件加 / 解密方案浅析</h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p><strong><em>本文提纲，请根据需要自行跳过</em></strong></p>
+
+<ul>
+<li><a href="https://antscript.com/post/2016-04-10-encrypt-decrypt-analysis/#chapter1">最简加 / 解密流程</a></li>
+<li><a href="https://antscript.com/post/2016-04-10-encrypt-decrypt-analysis/#chapter2">让密钥更安全</a></li>
+<li><a href="https://antscript.com/post/2016-04-10-encrypt-decrypt-analysis/#chapter3">让解密好用些</a></li>
+<li><a href="post/2016-04-10-encrypt-decrypt-analysis/#chapter4">大文件加解密优化</a></li>
+</ul>
+
+<p></p>
+
+<p><a name="chapter1"></a></p>
+
+<hr />
+
+<h1 id="最简加-解密流程">最简加 / 解密流程</h1>
+
+<hr />
+
+<p><img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.37.png" alt="encrypt" /></p>
+
+<h4 id="问题-密钥如何生成-如何保存"><strong>问题：密钥如何生成，如何保存？</strong></h4>
+
+<ol>
+<li><strong>用户输入密码，根据密码生成密钥进行加密：</strong>
+<em>这种方式更加安全，密码不进行存储，则只要密码不泄露，即使拿到加密内容也很难解密。但每次解密均需要输入密码，且密码丢失将无法恢复文件。</em></li>
+<li><strong>为用户生成密钥并将密钥存储在本地：</strong>
+<em>这种方式可通过一些方便的验证机制（如：图案、指纹验证等）取得密钥后直接解密。不过，一旦存储密钥的安全机制被攻破，则会被轻易解密。</em></li>
+</ol>
+
+<p><a name="chapter2"></a></p>
+
+<hr />
+
+<h1 id="让密钥更安全">让密钥更安全</h1>
+
+<hr />
+
+<h5 id="对于方式1-生成密钥我们一般采用md5-salt-加盐-的方式">对于方式1，生成密钥我们一般采用md5+salt(加盐)的方式。</h5>
+
+<h5 id="对于方式2-密钥安全依赖于本地的存储安全机制-一旦本地的安全机制被攻破-则会带来非常大的隐患">对于方式2，密钥安全依赖于本地的存储安全机制，一旦本地的安全机制被攻破，则会带来非常大的隐患。</h5>
+
+<h4 id="为了让密钥更加安全-我们通常会对密钥进行加密处理后再存储-解密文件时需要先解密出密钥"><strong>为了让密钥更加安全，我们通常会对密钥进行加密处理后再存储，解密文件时需要先解密出密钥:</strong></h4>
+
+<p><img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.38.png" alt="encrypt" /></p>
+
+<p>但我们如何对密钥进行加密，在哪里进行加密？
+<strong>最直接的就是在程序中直接进行加密，而要解密文件时再对密钥进行解密，虽然这种方法简单粗暴，但如果能做到以下几点，也不失为一种足够安全的方式：</strong></p>
+
+<ul>
+<li>封装/混淆加密解密的代码使得很难甚至无法从反编译后的代码中获得</li>
+<li>加密解密的代码藏的足够深，并使用迷惑性的命名及逻辑</li>
+<li>原始的加密解密代码中参杂一些错误，在一些不相关的逻辑中加入一些对加密解密的修正</li>
+</ul>
+
+<p><strong><em>做到以上几点，则可以逐一过滤以下攻击</em></strong></p>
+
+<ul>
+<li>能够获取加密后密钥但无法反编译出程序代码的攻击</li>
+<li>反编译出程序代码无法找到加密解密代码的攻击</li>
+<li>找到加密解密代码但未能找到对加密解密进行修正的攻击</li>
+</ul>
+
+<p>通过以上手段，对于基本的加密文件安全性已经有了很好的保障。</p>
+
+<p><a name="chapter3"></a></p>
+
+<hr />
+
+<h1 id="让解密好用些">让解密好用些</h1>
+
+<hr />
+
+<h5 id="对于方式1生成的密钥-只能通过用户输入密码进行解密-虽然繁琐但却安全">对于方式1生成的密钥，只能通过用户输入密码进行解密，虽然繁琐但却安全。</h5>
+
+<h5 id="对于方式2生成的密钥-则需要一定的验证机制进行获取再解密-在有指纹验证的设备上-使用指纹验证无疑是一个很好的方案-则取得密钥的流程如下">对于方式2生成的密钥，则需要一定的验证机制进行获取再解密。在有指纹验证的设备上，使用指纹验证无疑是一个很好的方案，则取得密钥的流程如下：</h5>
+
+<p><img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.39.png" alt="encrypt" /></p>
+
+<p><a name="chapter4"></a></p>
+
+<hr />
+
+<h1 id="大文件加-解密优化">大文件加 / 解密优化</h1>
+
+<hr />
+
+<p><strong>现在我们多是使用AES对文件进行加密，几KB或者几十KB的文件在加解密时不会有明显的感觉，无需优化。但解密几MB甚至几十MB的文件就会有很大问题，根据设备性能的差异几十秒甚至几分钟都有可能，加密时可以放到非主线程中在后台完成，而业务流程是需要等解密完成才能进行后续操作的，如何加速加密解密？</strong></p>
+
+<ul>
+<li><h4 id="后台加密-提前解密"><strong>后台加密，提前解密：</strong></h4>
+
+<p>部分应用可通过优化交互流程将加密放在后台线程中进行，在使用数据前提前解密，通过验证后直接提供解密好的数据。该方案适用场景较窄，优点是不会增加太多复杂度。</p></li>
+
+<li><h4 id="分割文件多线程加密-多线程解密后合并文件"><strong>分割文件多线程加密，多线程解密后合并文件：</strong></h4>
+
+<p>将文件分割为多块后在后台的并行线程中进行加密，解密时将多块加密后的文件在后台的并行线程中解密，解密完成后再进行合并。该方案优点是可通用于各种场景，但会为整个加密/解密流程增加不小的复杂度，不过增加解密的复杂度后，也提高了安全性。推荐使用该方法。
+<img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.40.png" alt="encrypt" /></p></li>
+</ul>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">2016-04-10 21:40:05 &#43;0800 CST</span>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="clear"></div>
+                <div class="post-nav">
+                    
+                    <a class="post-nav-older" title="Next post: ErgoDox初级指南 - 入手及自定义键位" href="https://antscript.com/post/2016-05-03-ergodox-custom-layout-1/">&laquo; ErgoDox初级指南 - 入手及自定义键位</a>
+                    
+                    
+                    <a class="post-nav-newer" title="Previous post: 5分钟搭建基于Docker的静态服务器" href="https://antscript.com/post/2016-02-26-dockerweb/">5分钟搭建基于Docker的静态服务器 &raquo;</a>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+
+
+</body>
+
+</html>

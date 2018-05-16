@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>ErgoDox初级指南 - 入手及自定义键位 | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="single single-post postid-294 single-format-standard has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2016-05-03-ergodox-custom-layout-1/" class="format-bubble" title="ErgoDox初级指南 - 入手及自定义键位"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                        
+                        <div class="featured-media">
+                            <img width="766" height="284" src="https://o2vkv3svi.qnssl.com/@/antscript.com/images/2016/05/03/ergodox.jpg" class="attachment-post-image wp-post-image" alt="ErgoDox初级指南 - 入手及自定义键位" />
+                        </div>
+                        
+                        
+                        <h2 class="post-title">ErgoDox初级指南 - 入手及自定义键位</h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <ul>
+<li><a href="https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter1">入手指南</a></li>
+<li><a href="https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter2">所需软件</a></li>
+<li><a href="https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter3">定义键位</a></li>
+<li><a href="https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter4">刷入键盘</a></li>
+</ul>
+
+<p></p>
+
+<p><a name="chapter1"></a></p>
+
+<hr />
+
+<h1 id="入手指南">入手指南</h1>
+
+<hr />
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/images/2016/05/03/massdrop_ergodox.jpg" alt="massdrop_ergodox" /></p>
+
+<h4 id="入手ergodox的方式"><strong>入手ErgoDox的方式</strong></h4>
+
+<ol>
+<li><strong>Massdrop参团（推荐）：</strong>
+<em><a href="https://www.massdrop.com/buy/infinity-ergodox">massdrop.com/buy/infinity-ergodo</a>，199.99美元，邮费25美元，税？，开团时间不定，等待时间长，需要转运，品质不错。</em></li>
+<li><strong>淘宝（本人选择）：</strong>
+<em>不想等ErgoDox所以淘宝，只有一家，订做需要1周左右，价格和Massdrop差不多，外观及质量一般。900RMB(键盘)+400(键帽)RMB。</em></li>
+<li><strong>DIY：</strong>
+<em>有一定电子DIY经验者可尝试。<a href="http://ergodox.org">ErgoDox.org</a></em></li>
+</ol>
+
+<h5 id="建议购买无刻印键帽-方便日后修改键位"><em>建议购买无刻印键帽，方便日后修改键位。</em></h5>
+
+<p><a name="chapter2"></a></p>
+
+<hr />
+
+<h1 id="所需软件">所需软件</h1>
+
+<hr />
+
+<h4 id="tessy-loader">Tessy Loader :</h4>
+
+<h4 id="https-www-pjrc-com-teensy-loader-html-https-www-pjrc-com-teensy-loader-html"><strong><a href="https://www.pjrc.com/teensy/loader.html">https://www.pjrc.com/teensy/loader.html</a></strong></h4>
+
+<p><a name="chapter3"></a></p>
+
+<hr />
+
+<h1 id="定义键位">定义键位</h1>
+
+<hr />
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/images/2016/05/03/ergodox_default_layout.png" alt="ergodox_default_layout" /></p>
+
+<h4 id="https-keyboard-configurator-massdrop-com-ext-ergodox-https-keyboard-configurator-massdrop-com-ext-ergodox"><a href="https://keyboard-configurator.massdrop.com/ext/ergodox">https://keyboard-configurator.massdrop.com/ext/ergodox</a></h4>
+
+<h4 id="上图是默认布局-根据自己的需求修改键位布局后-下载hex文件">上图是默认布局，根据自己的需求修改键位布局后，下载hex文件。</h4>
+
+<h4 id="修改布局前可根据自己的情况多想象-推理下什么样的布局是最合理的-不要指望一次就能得到满意的布局-多测试多感受-有舍才有得-找到最适合自己的布局"><strong>修改布局前可根据自己的情况多想象/推理下什么样的布局是最合理的，不要指望一次就能得到满意的布局，多测试多感受，有舍才有得，找到最适合自己的布局。</strong></h4>
+
+<p><a name="chapter4"></a></p>
+
+<hr />
+
+<h1 id="刷入键盘">刷入键盘</h1>
+
+<hr />
+
+<h3 id="键盘链接电脑-打开teensy">键盘链接电脑，打开Teensy</h3>
+
+<p><img src="https://o2vkv3svi.qnssl.com/@/antscript.com/images/2016/05/03/teensy.png" alt="teensy" /></p>
+
+<h4 id="1-选择上一步下载的hex文件">1.选择上一步下载的hex文件</h4>
+
+<h4 id="2-按右手键盘右上角的电路板上的按钮-箭头包围的提示文字会消失">2.按右手键盘右上角的电路板上的按钮，箭头包围的提示文字会消失</h4>
+
+<h4 id="3-下载hex文件">3.下载hex文件</h4>
+
+<h4 id="4-重启键盘">4.重启键盘</h4>
+
+<hr />
+
+<h1 id="未完待续">未完待续&hellip;</h1>
+
+<hr />
+
+<h5 id="待我感受一段时间-会再写一篇使用体验-包括如何通过编程的方式来定义常用的组合键-command-c-command-v-并编译出hex文件的流程">待我感受一段时间，会再写一篇使用体验，包括如何通过编程的方式来定义常用的组合键（Command+C , Command+V&hellip;），并编译出hex文件的流程。</h5>
+
+<hr />
+
+<hr />
+
+<h3 id="6-2更新-为ergodox定义组合键-post-2016-06-02-ergodox-custom-layout-2">6.2更新（<a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/">为Ergodox定义组合键</a>）</h3>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">2016-05-03 20:21:01 &#43;0800 CST</span>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="clear"></div>
+                <div class="post-nav">
+                    
+                    <a class="post-nav-older" title="Next post: ErgoDox中级指南 - 自定义组合键" href="https://antscript.com/post/2016-06-02-ergodox-custom-layout-2/">&laquo; ErgoDox中级指南 - 自定义组合键</a>
+                    
+                    
+                    <a class="post-nav-newer" title="Previous post: 文件加 / 解密方案浅析" href="https://antscript.com/post/2016-04-10-encrypt-decrypt-analysis/">文件加 / 解密方案浅析 &raquo;</a>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+
+
+</body>
+
+</html>
