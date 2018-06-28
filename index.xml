@@ -9,10 +9,26 @@
     <managingEditor>antscript@gmail.com (AntScript)</managingEditor>
     <webMaster>antscript@gmail.com (AntScript)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 06 Apr 2018 21:12:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jun 2018 10:10:31 +0800</lastBuildDate>
     
 	<atom:link href="https://antscript.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 WKWebView 中注入 js 的时机</title>
+      <link>https://antscript.com/post/2018-06-28-wkwebview-js/</link>
+      <pubDate>Thu, 28 Jun 2018 10:10:31 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2018-06-28-wkwebview-js/</guid>
+      <description>&lt;p&gt;最近使用 WKWebView 嵌入网页，需要在页面中注入 js，记录一下遇到的坑。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;u&gt;&lt;a href=&#34;https://antscript.com/post/2018-06-28-WKWebview-JS/#chapter1&#34;&gt;修改 user-agent&lt;/a&gt;&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;&lt;u&gt;&lt;a href=&#34;https://antscript.com/post/2018-06-28-WKWebview-JS/#chapter2&#34;&gt;在 window 上注入 js&lt;/a&gt;&lt;/u&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Swift使用Decodable解析JSON时的一个小问题</title>
