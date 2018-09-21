@@ -11,8 +11,8 @@
     </script>
     <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
     <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
-    <link rel='stylesheet' id='lingonberry_style-css' href='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
-    <script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://cdn.antscript.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
     
     <style type="text/css">
     body a {
@@ -143,7 +143,7 @@
           text-indent: -99999px;
           width: 100px;
           display: block;
-          background: url(https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          background: url(https://cdn.antscript.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
           height: 100px;
           top: 0px;
           cursor: pointer;
@@ -199,7 +199,7 @@
 <div class="header section">
     <div class="header-inner section-inner">
         <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
-            <img src="https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+            <img src="https://cdn.antscript.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
         </a>
         <h1 class="blog-title">
                     <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
@@ -225,7 +225,7 @@
                     <div class="post-header">
                         
                         <div class="featured-media">
-                            <img width="766" height="284" src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/encrypt1-766x437.jpg" class="attachment-post-image wp-post-image" alt="文件加 / 解密方案浅析" />
+                            <img width="766" height="284" src="https://cdn.antscript.com/wp-content/uploads/2016/04/encrypt1-766x437.jpg" class="attachment-post-image wp-post-image" alt="文件加 / 解密方案浅析" />
                         </div>
                         
                         
@@ -252,7 +252,7 @@
 
 <hr />
 
-<p><img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.37.png" alt="encrypt" /></p>
+<p><img src="https://cdn.antscript.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.37.png" alt="encrypt" /></p>
 
 <h4 id="问题-密钥如何生成-如何保存"><strong>问题：密钥如何生成，如何保存？</strong></h4>
 
@@ -277,7 +277,7 @@
 
 <h4 id="为了让密钥更加安全-我们通常会对密钥进行加密处理后再存储-解密文件时需要先解密出密钥"><strong>为了让密钥更加安全，我们通常会对密钥进行加密处理后再存储，解密文件时需要先解密出密钥:</strong></h4>
 
-<p><img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.38.png" alt="encrypt" /></p>
+<p><img src="https://cdn.antscript.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.38.png" alt="encrypt" /></p>
 
 <p>但我们如何对密钥进行加密，在哪里进行加密？
 <strong>最直接的就是在程序中直接进行加密，而要解密文件时再对密钥进行解密，虽然这种方法简单粗暴，但如果能做到以下几点，也不失为一种足够安全的方式：</strong></p>
@@ -310,7 +310,7 @@
 
 <h5 id="对于方式2生成的密钥-则需要一定的验证机制进行获取再解密-在有指纹验证的设备上-使用指纹验证无疑是一个很好的方案-则取得密钥的流程如下">对于方式2生成的密钥，则需要一定的验证机制进行获取再解密。在有指纹验证的设备上，使用指纹验证无疑是一个很好的方案，则取得密钥的流程如下：</h5>
 
-<p><img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.39.png" alt="encrypt" /></p>
+<p><img src="https://cdn.antscript.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.39.png" alt="encrypt" /></p>
 
 <p><a name="chapter4"></a></p>
 
@@ -330,7 +330,7 @@
 <li><h4 id="分割文件多线程加密-多线程解密后合并文件"><strong>分割文件多线程加密，多线程解密后合并文件：</strong></h4>
 
 <p>将文件分割为多块后在后台的并行线程中进行加密，解密时将多块加密后的文件在后台的并行线程中解密，解密完成后再进行合并。该方案优点是可通用于各种场景，但会为整个加密/解密流程增加不小的复杂度，不过增加解密的复杂度后，也提高了安全性。推荐使用该方法。
-<img src="https://o2vkv3svi.qnssl.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.40.png" alt="encrypt" /></p></li>
+<img src="https://cdn.antscript.com/wp-content/uploads/2016/04/2016-04-11%20at%2022.40.png" alt="encrypt" /></p></li>
 </ul>
                     </div>
                     
@@ -370,7 +370,7 @@
     </div>
     
 </div>
-<script type='text/javascript' src='https://o2vkv3svi.qnssl.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
 <div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
 
 
