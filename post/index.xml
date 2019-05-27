@@ -16,10 +16,10 @@
     
     <item>
       <title>在 WKWebView 中注入 js 的时机</title>
-      <link>https://antscript.com/post/2018-06-28-wkwebview-js/</link>
+      <link>https://antscript.com/post/2018-06-28-WKWebview-JS/</link>
       <pubDate>Thu, 28 Jun 2018 10:10:31 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2018-06-28-wkwebview-js/</guid>
+      <guid>https://antscript.com/post/2018-06-28-WKWebview-JS/</guid>
       <description>&lt;p&gt;最近使用 WKWebView 嵌入网页，需要在页面中注入 js，记录一下遇到的坑。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Swift使用Decodable解析JSON时的一个小问题</title>
-      <link>https://antscript.com/post/2018-03-14-ios-decodable-empty-json/</link>
+      <link>https://antscript.com/post/2018-03-14-iOS-decodable-empty-json/</link>
       <pubDate>Fri, 06 Apr 2018 21:12:22 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2018-03-14-ios-decodable-empty-json/</guid>
+      <guid>https://antscript.com/post/2018-03-14-iOS-decodable-empty-json/</guid>
       <description>&lt;p&gt;从Swift4开始提供的Decodable解析JSON确实很方便，但遇到一个小问题，记录一下。&lt;/p&gt;
 
 &lt;p&gt;当JSON中某个key的值为{}或者空字符串&amp;rdquo;&amp;ldquo;，而该值需要解析的不是基本类型时，即使标记为 Optional，依然会导致整个解析失败：&lt;/p&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Swift中图片资源使用流程的优化</title>
-      <link>https://antscript.com/post/2018-01-14-ios-assets-optimization/</link>
+      <link>https://antscript.com/post/2018-01-14-iOS-Assets-Optimization/</link>
       <pubDate>Sun, 14 Jan 2018 10:38:33 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2018-01-14-ios-assets-optimization/</guid>
+      <guid>https://antscript.com/post/2018-01-14-iOS-Assets-Optimization/</guid>
       <description>&lt;p&gt;去年发布的Xcode9支持在代码编辑中直接插入图片，类似如下效果&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://cdn.antscript.com/@/antscript.com/upload/images/2018-01-14/assets_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -121,10 +121,10 @@
     
     <item>
       <title>ErgoDox小坑 - Command键失灵</title>
-      <link>https://antscript.com/post/2017-11-21-ergodox/</link>
+      <link>https://antscript.com/post/2017-11-21-Ergodox/</link>
       <pubDate>Mon, 20 Nov 2017 22:01:23 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-11-21-ergodox/</guid>
+      <guid>https://antscript.com/post/2017-11-21-Ergodox/</guid>
       <description>&lt;h4 id=&#34;今天不知什么操作-导致ergodox无法输出-command-键&#34;&gt;今天不知什么操作，导致Ergodox无法输出⌘(Command)键。&lt;/h4&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -132,10 +132,10 @@
     
     <item>
       <title>iOS中多语言本地化流程的优化</title>
-      <link>https://antscript.com/post/2017-08-08-ios-localized-optimization/</link>
+      <link>https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/</link>
       <pubDate>Tue, 08 Aug 2017 19:28:33 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-08-08-ios-localized-optimization/</guid>
+      <guid>https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/</guid>
       <description>&lt;p&gt;本文从提升效率和减少错误两方面对传统的多语言本地化方式进行了优化，虽然标题是iOS，但其实macOS也通用。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -152,10 +152,10 @@
     
     <item>
       <title>[自动化之路] - 单人iOS项目的自动化实践</title>
-      <link>https://antscript.com/post/2017-07-07-ios-devops-1/</link>
+      <link>https://antscript.com/post/2017-07-07-iOS-DevOps-1/</link>
       <pubDate>Thu, 06 Jul 2017 21:18:10 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-07-07-ios-devops-1/</guid>
+      <guid>https://antscript.com/post/2017-07-07-iOS-DevOps-1/</guid>
       <description>&lt;p&gt;不管是对于只有一个iOS工程师的小团队，还是个人练手的SideProject，由于是&amp;rdquo;单兵作战&amp;rdquo;，目标就是将以下流程做到尽量自动化：&lt;/p&gt;
 
 &lt;p&gt;开发 -&amp;gt; Git提交 -&amp;gt; 打包 -&amp;gt; 上传iTunesConnect -&amp;gt; TestFlight测试 -&amp;gt; 发布
@@ -176,10 +176,10 @@
     
     <item>
       <title>LayAuto - Mac上的智能窗口管理软件</title>
-      <link>https://antscript.com/post/2017-06-14-layauto/</link>
+      <link>https://antscript.com/post/2017-06-14-LayAuto/</link>
       <pubDate>Wed, 14 Jun 2017 20:21:32 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-06-14-layauto/</guid>
+      <guid>https://antscript.com/post/2017-06-14-LayAuto/</guid>
       <description>&lt;h3 id=&#34;https-layautoapp-com-https-layautoapp-com&#34;&gt;&lt;a href=&#34;https://layautoapp.com&#34;&gt;https://layautoapp.com&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;一个Mac上窗口自动布局的工具，可以在很大程度上省去手动调整各个应用窗口大小和位置的操作。&lt;/p&gt;
@@ -200,10 +200,10 @@
     
     <item>
       <title>[译] 编程十诫</title>
-      <link>https://antscript.com/post/2017-06-07-the-ten-commandments-of-egoless-programming/</link>
+      <link>https://antscript.com/post/2017-06-07-The-Ten-Commandments-of-Egoless-Programming/</link>
       <pubDate>Wed, 07 Jun 2017 20:32:21 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-06-07-the-ten-commandments-of-egoless-programming/</guid>
+      <guid>https://antscript.com/post/2017-06-07-The-Ten-Commandments-of-Egoless-Programming/</guid>
       <description>&lt;p&gt;记录一下，时刻提醒自己。&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -241,10 +241,10 @@
     
     <item>
       <title>SDK设计要点总结</title>
-      <link>https://antscript.com/post/2017-04-25-sdk-design-point/</link>
+      <link>https://antscript.com/post/2017-04-25-SDK-Design-Point/</link>
       <pubDate>Tue, 25 Apr 2017 19:35:15 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-04-25-sdk-design-point/</guid>
+      <guid>https://antscript.com/post/2017-04-25-SDK-Design-Point/</guid>
       <description>&lt;p&gt;最近公司在开发平台的iOS和Android的SDK，总结了一些经验。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -252,10 +252,10 @@
     
     <item>
       <title>DevCost - 开发者的成本预算及续费提醒</title>
-      <link>https://antscript.com/post/2017-03-18-devcost/</link>
+      <link>https://antscript.com/post/2017-03-18-DevCost/</link>
       <pubDate>Sat, 18 Mar 2017 19:35:15 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-03-18-devcost/</guid>
+      <guid>https://antscript.com/post/2017-03-18-DevCost/</guid>
       <description>&lt;h3 id=&#34;由于域名原因-需要将-payer-升级为-devcost-之前购买过-payer-的朋友请通过bundle来进行升级-payer将不再升级维护-带来的不便深表歉意&#34;&gt;由于域名原因，需要将&lt;strong&gt;Payer&lt;/strong&gt;升级为&lt;strong&gt;DevCost&lt;/strong&gt; , 之前购买过&lt;strong&gt;Payer&lt;/strong&gt;的朋友请通过Bundle来进行升级，，Payer将不再升级维护，带来的不便深表歉意。&lt;/h3&gt;
 
 &lt;hr /&gt;</description>
@@ -285,10 +285,10 @@
     
     <item>
       <title>[iOS] Quick Exchang -- 汇率计算workflow</title>
-      <link>https://antscript.com/post/2016-11-20-iphone-workflow-exchange-rate/</link>
+      <link>https://antscript.com/post/2016-11-20-iPhone-workflow-exchange-rate/</link>
       <pubDate>Sun, 20 Nov 2016 19:22:30 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-11-20-iphone-workflow-exchange-rate/</guid>
+      <guid>https://antscript.com/post/2016-11-20-iPhone-workflow-exchange-rate/</guid>
       <description>&lt;h4 id=&#34;一个workflow的入门练习-汇率换算小工具&#34;&gt;一个workflow的入门练习，汇率换算小工具&lt;/h4&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -296,10 +296,10 @@
     
     <item>
       <title>[open source]为你的 Mac App 添加开机启动</title>
-      <link>https://antscript.com/post/2016-10-19-aslaunchermac/</link>
+      <link>https://antscript.com/post/2016-10-19-ASLauncherMac/</link>
       <pubDate>Wed, 19 Oct 2016 20:19:21 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-10-19-aslaunchermac/</guid>
+      <guid>https://antscript.com/post/2016-10-19-ASLauncherMac/</guid>
       <description>&lt;h4 id=&#34;开发-mac-app-时经常会需要设置开机启动功能-封装了一下-虽然还是需要手动设置一些东西-但也方便不少&#34;&gt;开发 Mac App 时经常会需要设置开机启动功能，封装了一下，虽然还是需要手动设置一些东西，但也方便不少。&lt;/h4&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -372,10 +372,10 @@
     
     <item>
       <title>Payer - 开发者的私房预算管理工具</title>
-      <link>https://antscript.com/post/2016-08-18-payer/</link>
+      <link>https://antscript.com/post/2016-08-18-Payer/</link>
       <pubDate>Thu, 18 Aug 2016 19:35:15 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-08-18-payer/</guid>
+      <guid>https://antscript.com/post/2016-08-18-Payer/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-08-18-Payer/#chapter1&#34;&gt;需求&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-08-18-Payer/#chapter2&#34;&gt;功能特点&lt;/a&gt;&lt;/li&gt;
@@ -391,10 +391,10 @@
     
     <item>
       <title>IDSafer - 为证件照打上水印(iOS)</title>
-      <link>https://antscript.com/post/2016-06-28-idsafer/</link>
+      <link>https://antscript.com/post/2016-06-28-IDSafer/</link>
       <pubDate>Tue, 28 Jun 2016 20:22:31 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-06-28-idsafer/</guid>
+      <guid>https://antscript.com/post/2016-06-28-IDSafer/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-06-28-IDSafer/#chapter1&#34;&gt;应用特点&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-06-28-IDSafer/#chapter2&#34;&gt;有什么问题&lt;/a&gt;&lt;/li&gt;
@@ -410,10 +410,10 @@
     
     <item>
       <title>ASHUD - 用Swift写的HUD库(OS X)</title>
-      <link>https://antscript.com/post/2016-06-06-ashud/</link>
+      <link>https://antscript.com/post/2016-06-06-ASHUD/</link>
       <pubDate>Mon, 06 Jun 2016 22:31:21 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-06-06-ashud/</guid>
+      <guid>https://antscript.com/post/2016-06-06-ASHUD/</guid>
       <description>&lt;h4 id=&#34;可定制-显示时间-位置-大小-色彩-边框-的hud&#34;&gt;可定制 &lt;strong&gt;显示时间，位置，大小，色彩，边框&lt;/strong&gt; 的HUD&lt;/h4&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -421,10 +421,10 @@
     
     <item>
       <title>ErgoDox中级指南 - 自定义组合键</title>
-      <link>https://antscript.com/post/2016-06-02-ergodox-custom-layout-2/</link>
+      <link>https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/</link>
       <pubDate>Thu, 02 Jun 2016 21:12:21 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-06-02-ergodox-custom-layout-2/</guid>
+      <guid>https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter1&#34;&gt;目的&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter2&#34;&gt;所需工具&lt;/a&gt;&lt;/li&gt;
@@ -439,10 +439,10 @@
     
     <item>
       <title>ErgoDox初级指南 - 入手及自定义键位</title>
-      <link>https://antscript.com/post/2016-05-03-ergodox-custom-layout-1/</link>
+      <link>https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/</link>
       <pubDate>Tue, 03 May 2016 20:21:01 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2016-05-03-ergodox-custom-layout-1/</guid>
+      <guid>https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter1&#34;&gt;入手指南&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter2&#34;&gt;所需软件&lt;/a&gt;&lt;/li&gt;
@@ -719,10 +719,10 @@ data.writeToFile(filePath, atomically: true)&lt;/code&gt;&lt;/p&gt;
     
     <item>
       <title>Swift中使用DDHotKey ( OS X ) </title>
-      <link>https://antscript.com/post/2015-01-05-swiftyddhotkey/</link>
+      <link>https://antscript.com/post/2015-01-05-SwiftyDDHotKey/</link>
       <pubDate>Fri, 30 Jan 2015 22:24:19 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2015-01-05-swiftyddhotkey/</guid>
+      <guid>https://antscript.com/post/2015-01-05-SwiftyDDHotKey/</guid>
       <description>&lt;h3 id=&#34;ddhotkey-https-github-com-davedelong-ddhotkey-是一个objective-c下的os-x快捷键调用库-简单强大好用-目前swift还没有类似的库支持-如何在swift中也能用ddhotkey呢&#34;&gt;&lt;a href=&#34;https://github.com/davedelong/DDHotKey&#34;&gt;DDHotKey&lt;/a&gt;是一个Objective-C下的OS X快捷键调用库，简单强大好用，目前Swift还没有类似的库支持，如何在Swift中也能用DDHotKey呢：&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
