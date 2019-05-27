@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>AntScript | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://cdn.antscript.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://cdn.antscript.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="home blog has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://cdn.antscript.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+             
+            <div id="post-0" class="post-0 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2018-06-28-wkwebview-js/" class="format-bubble" title="在 WKWebView 中注入 js 的时机"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2018-06-28-wkwebview-js/" rel="bookmark" title="在 WKWebView 中注入 js 的时机">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/2018-06-28/wkwebview_inject_js_title.png" class="attachment-post-image wp-post-image" alt="在 WKWebView 中注入 js 的时机" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2018-06-28-wkwebview-js/" rel="bookmark" title="在 WKWebView 中注入 js 的时机">在 WKWebView 中注入 js 的时机</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>最近使用 WKWebView 嵌入网页，需要在页面中注入 js，记录一下遇到的坑。</p>
+
+<ul>
+<li><u><a href="https://antscript.com/post/2018-06-28-WKWebview-JS/#chapter1">修改 user-agent</a></u></li>
+<li><u><a href="https://antscript.com/post/2018-06-28-WKWebview-JS/#chapter2">在 window 上注入 js</a></u></li>
+</ul>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2018-06-28-wkwebview-js/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2018-06-28 10:10:31 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2018-03-14-ios-decodable-empty-json/" class="format-bubble" title="Swift使用Decodable解析JSON时的一个小问题"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2018-03-14-ios-decodable-empty-json/" rel="bookmark" title="Swift使用Decodable解析JSON时的一个小问题">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/2018-04-08/json_issue_title.jpg" class="attachment-post-image wp-post-image" alt="Swift使用Decodable解析JSON时的一个小问题" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2018-03-14-ios-decodable-empty-json/" rel="bookmark" title="Swift使用Decodable解析JSON时的一个小问题">Swift使用Decodable解析JSON时的一个小问题</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>从Swift4开始提供的Decodable解析JSON确实很方便，但遇到一个小问题，记录一下。</p>
+
+<p>当JSON中某个key的值为{}或者空字符串&rdquo;&ldquo;，而该值需要解析的不是基本类型时，即使标记为 Optional，依然会导致整个解析失败：</p>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2018-03-14-ios-decodable-empty-json/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2018-04-06 21:12:22 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-2" class="post-2 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2018-01-14-ios-assets-optimization/" class="format-bubble" title="Swift中图片资源使用流程的优化"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2018-01-14-ios-assets-optimization/" rel="bookmark" title="Swift中图片资源使用流程的优化">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/2018-01-14/assets_title.jpg" class="attachment-post-image wp-post-image" alt="Swift中图片资源使用流程的优化" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2018-01-14-ios-assets-optimization/" rel="bookmark" title="Swift中图片资源使用流程的优化">Swift中图片资源使用流程的优化</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>去年发布的Xcode9支持在代码编辑中直接插入图片，类似如下效果</p>
+
+<p><img src="https://cdn.antscript.com/@/antscript.com/upload/images/2018-01-14/assets_1.jpg" alt="" /></p>
+
+<p>但用了一段时间以后还是不太喜欢，换回了原来的方法。</p>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2018-01-14-ios-assets-optimization/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2018-01-14 10:38:33 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-3" class="post-3 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-12-28-step-by-step-machine-learning/" class="format-bubble" title="Step by Step，一个周末入门机器学习"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-12-28-step-by-step-machine-learning/" rel="bookmark" title="Step by Step，一个周末入门机器学习">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/2017-12-21/machine-learning.jpg" class="attachment-post-image wp-post-image" alt="Step by Step，一个周末入门机器学习" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-12-28-step-by-step-machine-learning/" rel="bookmark" title="Step by Step，一个周末入门机器学习">Step by Step，一个周末入门机器学习</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <h1 id="导读">导读</h1>
+
+<hr />
+
+<p>​   几个月前开始入门机器学习时，面对一堆英文视频和数学基础，咬紧牙关摸爬滚打，终于可以在SideProject上试着使用机器学习了。</p>
+
+<p>​   回首前路，发现自己摸索的是一条坑多路绕的林间小道，而当我到达此处，发现并不需要如此艰苦耗时，作为前车之鉴，将这几个月的心得分享给刚开始入门或正打算入门，以及从入门到放弃了的广大程序员。</p>
+
+<p>​   本系列文章面向对机器学习感兴趣的任何人，无需数学基础，力求从无任何基础的角度与实践方式出发，让大家能够在几天的时间内了解最简的机器学习使用流程，以实验的性质运用到工作或个人项目中，解决一些简单但繁琐的实际问题，从而为更进一步的深入学习打下基础。</p>
+
+<h1 id="目录">目录</h1>
+
+<hr />
+
+<ul>
+<li>基础理论
+
+<ul>
+<li>关于机器学习</li>
+<li>什么是机器学习</li>
+<li>机器学习流程</li>
+<li>机器学习分类</li>
+</ul></li>
+<li>Hello World
+
+<ul>
+<li>环境搭建</li>
+<li>学习目标</li>
+<li>数据准备</li>
+<li>训练模型</li>
+<li>保存模型</li>
+<li>要点自查</li>
+</ul></li>
+<li>First App
+
+<ul>
+<li>学习目标</li>
+<li>模型转换</li>
+<li>模型导入</li>
+<li>开始编码</li>
+<li>运行结果</li>
+<li>​</li>
+</ul></li>
+<li>总结
+
+<ul>
+<li>要点回顾</li>
+<li>错过了什么</li>
+<li>那接下来呢</li>
+</ul></li>
+</ul>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-12-28-step-by-step-machine-learning/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-12-27 07:20:23 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-4" class="post-4 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-11-21-ergodox/" class="format-bubble" title="ErgoDox小坑 - Command键失灵"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-11-21-ergodox/" rel="bookmark" title="ErgoDox小坑 - Command键失灵">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/images/2016/05/03/ergodox.jpg" class="attachment-post-image wp-post-image" alt="ErgoDox小坑 - Command键失灵" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-11-21-ergodox/" rel="bookmark" title="ErgoDox小坑 - Command键失灵">ErgoDox小坑 - Command键失灵</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <h4 id="今天不知什么操作-导致ergodox无法输出-command-键">今天不知什么操作，导致Ergodox无法输出⌘(Command)键。</h4>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-11-21-ergodox/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-11-20 22:01:23 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-5" class="post-5 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-08-08-ios-localized-optimization/" class="format-bubble" title="iOS中多语言本地化流程的优化"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-08-08-ios-localized-optimization/" rel="bookmark" title="iOS中多语言本地化流程的优化">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/2017-08-08/localized_title.jpg" class="attachment-post-image wp-post-image" alt="iOS中多语言本地化流程的优化" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-08-08-ios-localized-optimization/" rel="bookmark" title="iOS中多语言本地化流程的优化">iOS中多语言本地化流程的优化</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>本文从提升效率和减少错误两方面对传统的多语言本地化方式进行了优化，虽然标题是iOS，但其实macOS也通用。</p>
+
+<ul>
+<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter1">传统的方法</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter2">提升点效率</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter3">减少些错误</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter4">自动化万岁</a></u></li>
+</ul>
+
+<p>[2017.09.10]之前脚本有错误，经Lu_z_x指出现在已更正.</p>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-08-08-ios-localized-optimization/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-08-08 19:28:33 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-6" class="post-6 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-07-07-ios-devops-1/" class="format-bubble" title="[自动化之路] - 单人iOS项目的自动化实践"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-07-07-ios-devops-1/" rel="bookmark" title="[自动化之路] - 单人iOS项目的自动化实践">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/20170707/clock.jpg" class="attachment-post-image wp-post-image" alt="[自动化之路] - 单人iOS项目的自动化实践" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-07-07-ios-devops-1/" rel="bookmark" title="[自动化之路] - 单人iOS项目的自动化实践">[自动化之路] - 单人iOS项目的自动化实践</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>不管是对于只有一个iOS工程师的小团队，还是个人练手的SideProject，由于是&rdquo;单兵作战&rdquo;，目标就是将以下流程做到尽量自动化：</p>
+
+<p>开发 -&gt; Git提交 -&gt; 打包 -&gt; 上传iTunesConnect -&gt; TestFlight测试 -&gt; 发布
+<br/>
+<br/>
+<br/>
+本文内容</p>
+
+<ul>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter1">工具及安装</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter2">TestFlight设置</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter3">使用fastlane打包上传</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter4">自动化</a></u></li>
+</ul>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-07-07-ios-devops-1/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-07-06 21:18:10 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-7" class="post-7 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-06-14-layauto/" class="format-bubble" title="LayAuto - Mac上的智能窗口管理软件"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-06-14-layauto/" rel="bookmark" title="LayAuto - Mac上的智能窗口管理软件">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/20170614/title.png" class="attachment-post-image wp-post-image" alt="LayAuto - Mac上的智能窗口管理软件" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-06-14-layauto/" rel="bookmark" title="LayAuto - Mac上的智能窗口管理软件">LayAuto - Mac上的智能窗口管理软件</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <h3 id="https-layautoapp-com-https-layautoapp-com"><a href="https://layautoapp.com">https://layautoapp.com</a></h3>
+
+<p>一个Mac上窗口自动布局的工具，可以在很大程度上省去手动调整各个应用窗口大小和位置的操作。</p>
+
+<hr />
+
+<p><strong>特别是对以下需求有立竿见影的效果</strong></p>
+
+<ul>
+<li><a href="https://antscript.com/post/2017-06-14-LayAuto/#chapter1">每次打开程序都在上次的位置</a></li>
+<li><a href="https://antscript.com/post/2017-06-14-LayAuto/#chapter2">在多显示器切换时保持切换后的位置</a></li>
+<li><a href="https://antscript.com/post/2017-06-14-LayAuto/#chapter3">自动将某个程序固定在同一位置</a></li>
+<li><a href="https://antscript.com/post/2017-06-14-LayAuto/#chapter4">自动将某些窗口按照一定规则排列</a></li>
+</ul>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-06-14-layauto/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-06-14 20:21:32 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-8" class="post-8 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-06-07-the-ten-commandments-of-egoless-programming/" class="format-bubble" title="[译] 编程十诫"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-06-07-the-ten-commandments-of-egoless-programming/" rel="bookmark" title="[译] 编程十诫">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/20170607/20170607.jpg" class="attachment-post-image wp-post-image" alt="[译] 编程十诫" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-06-07-the-ten-commandments-of-egoless-programming/" rel="bookmark" title="[译] 编程十诫">[译] 编程十诫</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>记录一下，时刻提醒自己。</p>
+
+<hr />
+
+<ul>
+<li>原文链接 ： <u><strong><a href="https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/">The Ten Commandments of Egoless Programming</a></strong></u></li>
+</ul>
+
+<hr />
+
+<ul>
+<li><p><strong>1.理解自己会犯错并且接受这个事实，关键是要能尽早发现，吸取教训并继续向前。</strong></p></li>
+
+<li><p><strong>2.你不是你的代码，不要自责于曾经的错误，Code Review的目的就是发现并修复问题。</strong></p></li>
+
+<li><p><strong>3.山外有山，人外有人。多向别人请教，特别是你认为“不需要”的知识。</strong></p></li>
+
+<li><p><strong>4.不要默默重写代码，在有代码审查的制度下做起来会更安全。</strong></p></li>
+
+<li><p><strong>5.友善对待不如自己的人，尊敬并保持耐心。</strong></p></li>
+
+<li><p><strong>6.唯一不变的就是变化，积极拥抱它。</strong></p></li>
+
+<li><p><strong>7.学识带来权威，而不是职位。</strong></p></li>
+
+<li><p><strong>8.为信仰奋斗，失败也坦然接受。</strong></p></li>
+
+<li><p><strong>9.勇于交流。</strong></p></li>
+
+<li><p><strong>10.严于代码，宽以待人。</strong></p></li>
+</ul>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-06-07-the-ten-commandments-of-egoless-programming/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-06-07 20:32:21 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div id="post-9" class="post-9 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-04-25-sdk-design-point/" class="format-bubble" title="SDK设计要点总结"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                    	
+                        <div class="featured-media">
+                            <a href="https://antscript.com/post/2017-04-25-sdk-design-point/" rel="bookmark" title="SDK设计要点总结">
+                                <img width="766" height="437" src="https://cdn.antscript.com/@/antscript.com/upload/images/2017-04-25/sdk-title-bg.png" class="attachment-post-image wp-post-image" alt="SDK设计要点总结" />
+                            </a>
+                        </div>
+                        
+                        
+                        <h2 class="post-title"><a href="https://antscript.com/post/2017-04-25-sdk-design-point/" rel="bookmark" title="SDK设计要点总结">SDK设计要点总结</a></h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>最近公司在开发平台的iOS和Android的SDK，总结了一些经验。</p>
+
+<p></p>
+                        <p>
+                        <hr>
+                        <p> <a href="https://antscript.com/post/2017-04-25-sdk-design-point/#more" class="more-link">阅读全文</a></p>
+                        
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">2017-04-25 19:35:15 &#43;0800 CST</span>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            <div class="post-nav archive-nav">
+                
+                <a href="https://antscript.com/page/2/" class="post-nav-newer">较旧的文章 &raquo;</span></a>
+                
+                
+                <div class="clear"></div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+        
+    </div>
+
+     <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+</body>
+
+</html>

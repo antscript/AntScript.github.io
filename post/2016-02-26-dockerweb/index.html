@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>5分钟搭建基于Docker的静态服务器 | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://cdn.antscript.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://cdn.antscript.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="single single-post postid-294 single-format-standard has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://cdn.antscript.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2016-02-26-dockerweb/" class="format-bubble" title="5分钟搭建基于Docker的静态服务器"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                        
+                        <div class="featured-media">
+                            <img width="766" height="284" src="https://cdn.antscript.com/wp-content/uploads/2016/02/dockerweb-766x284.png" class="attachment-post-image wp-post-image" alt="5分钟搭建基于Docker的静态服务器" />
+                        </div>
+                        
+                        
+                        <h2 class="post-title">5分钟搭建基于Docker的静态服务器</h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <h4 id="现在比较流行使用静态网站生成器来搭建网站-博客-产品着陆页-微信转发页面等">现在比较流行使用静态网站生成器来搭建网站，博客/产品着陆页/微信转发页面等。</h4>
+
+<h4 id="但每次都需要对服务器进行配置-也是一个重复但繁琐的工作">但每次都需要对服务器进行配置，也是一个重复但繁琐的工作。</h4>
+
+<h4 id="使用dockerweb-只需5分钟就能搭建一个基于docker-container的nginx静态网页服务器-并通过github或bitbucket就能自动更新部署-甚至不需要对docker或者nginx有任何了解-只要有点点linux服务器的相关知识以及git的简单操作即可">使用DockerWeb，只需5分钟就能搭建一个基于Docker Container的Nginx静态网页服务器，并通过Github或Bitbucket就能自动更新部署。甚至不需要对Docker或者Nginx有任何了解，只要有点点Linux服务器的相关知识以及Git的简单操作即可。</h4>
+
+<h4 id="本站也转移到了dockerweb-现在管理维护真是方便太多了">本站也转移到了DockerWeb，现在管理维护真是方便太多了。</h4>
+
+<hr />
+
+<h1 id="https-github-com-antscript-dockerweb"><a href="https://github.com/antscript/DockerWeb">https://github.com/antscript/DockerWeb</a></h1>
+
+<p></p>
+
+<hr />
+
+<h1 id="what-is-dockerweb">What is DockerWeb ?</h1>
+
+<h4 id="dockerweb是一个静态网站搭建及部署工具">DockerWeb是一个静态网站搭建及部署工具</h4>
+
+<h4 id="使用dockerweb可以非常方便的在服务器-vps-云主机上部署静态网站">使用DockerWeb可以非常方便的在服务器/VPS/云主机上部署静态网站</h4>
+
+<h4 id="并且可以通过github或bitbucket对网站进行自动更新">并且可以通过Github或Bitbucket对网站进行自动更新</h4>
+
+<hr />
+
+<h1 id="功能特点">功能特点</h1>
+
+<ul>
+<li><strong>使用Docker Container运行,易于维护，备份和迁移都极其方便</strong></li>
+<li><strong>使用非常简单 通过DockerWeb五分钟搭建一个静态网站</strong></li>
+<li><strong>可通过Github或Bitbucket的webhook自动部署更新</strong></li>
+</ul>
+
+<hr />
+
+<h1 id="用法">用法</h1>
+
+<ul>
+<li><h3 id="step-0-install-docker-and-git"><strong>Step 0 :</strong> Install Docker and Git</h3>
+
+<p>Docker : <a href="https://docs.docker.com/engine/installation/">https://docs.docker.com/engine/installation/</a></p>
+
+<p>Git : <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p></li>
+
+<li><h3 id="step-1-fork-dockerweb-并克隆到本地"><strong>Step 1 :</strong>  Fork DockerWeb 并克隆到本地</h3>
+
+<p>如果是Bitbucket , 可直接从Github导入</p></li>
+
+<li><h3 id="step-2-配置ssh-bitbucket需要"><strong>Step 2 :</strong> 配置SSH (Bitbucket需要)</h3>
+
+<p>复制本机或新生成一对id_rsa和id_rsa.pub到服务器的/root/.ssh/目录下</p></li>
+
+<li><h3 id="step-3-配置https-如果需要https访问请配置"><strong>Step 3 :</strong> 配置HTTPS (如果需要https访问请配置)</h3>
+
+<p>复制ssl.crt和ssl.key到服务器</p></li>
+
+<li><h3 id="step-4-编辑setup-config-sh为适合你的配置"><strong>Step 4 :</strong> 编辑setup/config.sh为适合你的配置</h3></li>
+</ul>
+
+<p>注意：如果服务器上要部署多个网站，multi_site要配置为true</p>
+
+<ul>
+<li><h3 id="step-5-将仓库push到github或bitbucket"><strong>Step 5 :</strong> 将仓库push到Github或Bitbucket</h3></li>
+
+<li><h3 id="step-6-添加webhook用于自动部署更新"><strong>Step 6 :</strong> 添加webhook用于自动部署更新</h3></li>
+</ul>
+
+<p><code>#Github<br>
+Setting -&gt; Webhooks &amp; services -&gt; add webhook<br>
+Payload URL : http(s)://yourdomain.com:9000/hooks/your_webhook_id</code></p>
+
+<p><code>#Bitbucket<br>
+Setting -&gt; Webhooks -&gt; Add webhook<br>
+Title : title you want<br>
+URL : http(s)://yourdomain.com:9000/hooks/your_webhook_id</code></p>
+
+<ul>
+<li><h3 id="step-7-登陆服务器-克隆你提交的仓库并运行setup-setup-sh"><strong>Step 7 :</strong> 登陆服务器，克隆你提交的仓库并运行setup/setup.sh</h3></li>
+
+<li><h3 id="step-8-访问并测试你的网站"><strong>Step 8 :</strong> 访问并测试你的网站</h3></li>
+
+<li><h3 id="step-9-如果服务器上部署了多个网站-运行multi-web中的init-sh"><strong>Step 9 :</strong> 如果服务器上部署了多个网站，运行multi-web中的init.sh</h3>
+
+<p>部署新网站后需要重新运行init.sh</p></li>
+
+<li><h3 id="step-10-使用github或者bitbucket进行部署更新"><strong>Step 10 :</strong> 使用Github或者Bitbucket进行部署更新</h3></li>
+</ul>
+
+<hr />
+
+<h1 id="视频演示">视频演示</h1>
+
+<ul>
+<li><p><strong>通过DockerWeb五分钟搭建一个静态网站 :</strong>
+<embed src="http://player.youku.com/player.php/sid/XMTQ4NDUxNjcxNg==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
+</embed></p>
+
+<p>Youtube : <a href="https://www.youtube.com/watch?v=VQmeIzExRco">https://www.youtube.com/watch?v=VQmeIzExRco</a></p>
+
+<hr />
+
+<hr />
+
+<p>更新↓↓↓</p>
+
+<hr />
+
+<h1 id="dockerweb-部署多个网站">DockerWeb：部署多个网站</h1>
+
+<h3 id="dockerweb现在支持自动部署多个网站在同一台服务器-说明文档如下">DockerWeb现在支持自动部署多个网站在同一台服务器，说明文档如下：</h3>
+
+<h1 id="管理和维护多个网站一种方法是直接创建多个仓库-将所有文件拷贝到仓库中-分别用单个网站的方式进行部署-还有另一种更优雅的管理多个网站的方式是使用仓库的分支">管理和维护多个网站一种方法是直接创建多个仓库，将所有文件拷贝到仓库中，分别用单个网站的方式进行部署。还有另一种更优雅的管理多个网站的方式是使用仓库的分支：</h1>
+
+<ul>
+<li>为不同网站创建分支，在对应分支上进行网站管理及维护</li>
+<li>为不同网站创建有不同id的webhook</li>
+<li>通过切换不同分支对不同网站进行部署</li>
+</ul></li>
+</ul>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">2016-02-26 20:33:10 &#43;0800 CST</span>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="clear"></div>
+                <div class="post-nav">
+                    
+                    <a class="post-nav-older" title="Next post: 文件加 / 解密方案浅析" href="https://antscript.com/post/2016-04-10-encrypt-decrypt-analysis/">&laquo; 文件加 / 解密方案浅析</a>
+                    
+                    
+                    <a class="post-nav-newer" title="Previous post: 夏洛克俱乐部 2.0 — 用二维码分发你的文件" href="https://antscript.com/post/2015-10-19-sharelock-club-2-0-0-release/">夏洛克俱乐部 2.0 — 用二维码分发你的文件 &raquo;</a>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+
+
+</body>
+
+</html>

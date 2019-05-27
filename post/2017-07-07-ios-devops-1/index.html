@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
+    <title>[自动化之路] - 单人iOS项目的自动化实践 | 只想安静的做个码农</title>
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
+    <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://cdn.antscript.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    
+    <style type="text/css">
+    body a {
+        color: #353535;
+    }
+
+    body a:hover {
+        color: #353535;
+    }
+
+    .header {
+        background: #353535;
+    }
+
+    .post-bubbles a:hover {
+        background-color: #353535;
+    }
+
+    .mejs-horizontal-volume-current {
+        background-color: #353535;
+    }
+
+    .post-nav a:hover {
+        background-color: #353535;
+    }
+
+    .comment-meta-content cite a:hover {
+        color: #353535;
+    }
+
+    .comment-meta-content p a:hover {
+        color: #353535;
+    }
+
+    .comment-actions a:hover {
+        background-color: #353535;
+    }
+
+    .widget-content .textwidget a:hover {
+        color: #353535;
+    }
+
+    .widget_archive li a:hover {
+        color: #353535;
+    }
+
+    .widget_categories li a:hover {
+        color: #353535;
+    }
+
+    .widget_meta li a:hover {
+        color: #353535;
+    }
+
+    .widget_nav_menu li a:hover {
+        color: #353535;
+    }
+
+    .widget_rss .widget-content ul a.rsswidget:hover {
+        color: #353535;
+    }
+
+    #wp-calendar thead {
+        color: #353535;
+    }
+
+    .widget_tag_cloud a:hover {
+        background: #353535;
+    }
+
+    .search-button:hover .genericon {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-next:active {
+        color: #353535;
+    }
+
+    .flexslider:hover .flex-prev:active {
+        color: #353535;
+    }
+
+    .post-title a:hover {
+        color: #353535;
+    }
+
+    .post-content a {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        color: #353535;
+    }
+
+    .post-content a:hover {
+        border-bottom-color: #353535;
+    }
+
+    .post-content fieldset legend {
+        background: #353535;
+    }
+
+    .post-content input[type="submit"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="button"]:hover {
+        background: #353535;
+    }
+
+    .post-content input[type="reset"]:hover {
+        background: #353535;
+    }
+
+    .comment-header h4 a:hover {
+        color: #353535;
+    }
+
+    .form-submit #submit:hover {
+        background-color: #353535;
+    }
+
+    @media screen and (min-width: 900px) {
+      #app
+      {
+          z-index: 8000;
+          position: fixed;
+          text-indent: -99999px;
+          width: 100px;
+          display: block;
+          background: url(https://cdn.antscript.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          height: 100px;
+          top: 0px;
+          cursor: pointer;
+          right: 0px;
+      }
+    }
+    </style>
+    
+</head>
+
+
+<body class="single single-post postid-294 single-format-standard has-featured-image">
+    
+<div class="navigation">
+    <div class="navigation-inner section-inner">
+        <ul class="blog-menu">
+            <li id="menu-item-00" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-194"><a>Projects</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-project-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://layautoapp.com" target="_blank">LayAuto</a></li>
+                    
+                    <li id="menu-item-project-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://ticktock.today" target="_blank">Tick Tock Today</a></li>
+                    
+                    <li id="menu-item-project-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://itunes.apple.com/app/devcost-cost-tool-for-developer/id1209838272" target="_blank">DevCost</a></li>
+                    
+                    <li id="menu-item-project-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://aapp.space/idsafer/" target="_blank">IDSafer</a></li>
+                    
+                    <li id="menu-item-project-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Projects</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-children menu-item-268"><a>Open Source</a>
+                <ul class="sub-menu">
+                    
+                    <li id="menu-item-opensource-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASLauncherMac" target="_blank">ASLauncherMac</a></li>
+                    
+                    <li id="menu-item-opensource-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/ASHUD" target="_blank">ASHUD</a></li>
+                    
+                    <li id="menu-item-opensource-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://github.com/antscript/DockerWeb" target="_blank">DockerWeb</a></li>
+                    
+                    <li id="menu-item-opensource-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="" target="_blank">Open sources</a></li>
+                    
+                </ul>
+            </li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="mailto:antscript@gmail.com" target="_blank">antscript@gmail.com</a></li>
+        </ul>
+        
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+<div class="header section">
+    <div class="header-inner section-inner">
+        <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
+            <img src="https://cdn.antscript.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+        </a>
+        <h1 class="blog-title">
+                    <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
+                </h1>
+        <div class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+    <div class="content section-inner">
+        <div class="posts">
+            <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
+                <div class="post-bubbles">
+                    <a href="https://antscript.com/post/2017-07-07-ios-devops-1/" class="format-bubble" title="[自动化之路] - 单人iOS项目的自动化实践"></a>
+                </div>
+                <div class="content-inner">
+                    <div class="post-header">
+                        
+                        <div class="featured-media">
+                            <img width="766" height="284" src="https://cdn.antscript.com/@/antscript.com/upload/images/20170707/clock.jpg" class="attachment-post-image wp-post-image" alt="[自动化之路] - 单人iOS项目的自动化实践" />
+                        </div>
+                        
+                        
+                        <h2 class="post-title">[自动化之路] - 单人iOS项目的自动化实践</h2>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>不管是对于只有一个iOS工程师的小团队，还是个人练手的SideProject，由于是&rdquo;单兵作战&rdquo;，目标就是将以下流程做到尽量自动化：</p>
+
+<p>开发 -&gt; Git提交 -&gt; 打包 -&gt; 上传iTunesConnect -&gt; TestFlight测试 -&gt; 发布
+<br/>
+<br/>
+<br/>
+本文内容</p>
+
+<ul>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter1">工具及安装</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter2">TestFlight设置</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter3">使用fastlane打包上传</a></u></li>
+<li><u><a href="https://antscript.com/post/2017-07-07-iOS-DevOps-1/#chapter4">自动化</a></u></li>
+</ul>
+
+<p></p>
+
+<p><br/>
+<br/>
+<br/></p>
+
+<h4 id="本篇文章基于以下前提"><strong>本篇文章基于以下前提</strong></h4>
+
+<hr />
+
+<ul>
+<li>基本了解Git的使用</li>
+<li>已有苹果开发者账号
+<br/><br/><br/></li>
+</ul>
+
+<p><a name="chapter1"></a></p>
+
+<h4 id="工具及安装"><strong>工具及安装</strong></h4>
+
+<hr />
+
+<ul>
+<li><u><a href="https://git-scm.com/">Git</a></u></li>
+<li><u><a href="https://github.com">GitHub</a></u> / <u><a href="https://gitlab.com">GitLab</a></u> / <u><a href="https://bitbucket.org">Bitbucket</a></u></li>
+<li><u><a href="https://github.com/fastlane/fastlane">fastlane</a></u></li>
+<li><u><a href="https://developer.apple.com/testflight/">TestFlight</a></u> [需要登录developer.apple.com]
+<br/>
+<br/>
+<br/></li>
+</ul>
+
+<ol>
+<li><strong>安装Git</strong>
+<br/>
+<br/></li>
+
+<li><p><strong>选择Git仓库：</strong>
+<br/>GitHub(开源免费，私人仓库收费，建议开源项目选择)
+<br/>GitLab / Bitbucket(私人仓库免费，限制人数，建议闭源项目选择)
+<br/>
+<br/></p></li>
+
+<li><p><strong>安装fastlane</strong> <u><a href='https://github.com/fastlane/fastlane#installation' target='_blank'>如何安装?</a></u>
+<br/>
+<br/>
+<br/></p></li>
+</ol>
+
+<p><a name="chapter2"></a></p>
+
+<h4 id="testflight设置"><strong>TestFlight设置</strong></h4>
+
+<hr />
+
+<ul>
+<li>iTunesConnect -&gt; My App -&gt; [Your App] -&gt; TestFlight -&gt; Test Information</li>
+<li><strong>Beta App Description</strong>为必填，其他随意
+如果还未上传过版本，则<strong>iTunes Connect Users</strong>无法点击，上传一个版本处理完成后即可。</li>
+<li>选择<strong>iTunes Connect Users</strong>，新加一个Tester，选择自己的账号，如果需要添加其他的内测者，进入*Users and Roles*，使用AppleID进行邀请，同意后即可加入测试中。</li>
+<li>然后选择BUILDS下的iOS，会显示可进行测试的版本</li>
+<li>如果版本后显示 <em>Missing Compliance</em> ，需要进入该版本进行设置，点击版本号，右上角，根据自己的App进行确认即可，如果不想以后每次都进行确认，则需要在项目的info.plist中加入<strong>App Uses Non-Exempt Encryption</strong>，有加密则Yes，否则为No.</li>
+<li>之前对Test账号进行激活时，邮件中会有一个兑换码(Redeem)，需要iPhone安装TestFlight,并在TestFight中输入以激活该App的测试版本，也可在iPhone上直接点击邮件中的链接进行激活。
+*经过以上设置，每次有新的版本上传到iTunesConnect都会收到推送，安装后即可进行测试。
+<br/><br/><br/></li>
+</ul>
+
+<p><a name="chapter3"></a></p>
+
+<h4 id="使用fastlane打包上传"><strong>使用fastlane打包上传</strong></h4>
+
+<hr />
+
+<p>终端进入到项目目录：</p>
+
+<pre><code>$ fastlane init
+</code></pre>
+
+<p>按照提示一步步向下，期间需要输入你的开发者AppleID，密码，两步验证（如果开启的话）。
+<br/>
+<br/>
+然后编辑fastlane/Fastfile， <em>lane :beat do</em> 下面加入 <em>increment_build_number</em> ，每次打包自动更新build版本：</p>
+
+<pre><code>
+.
+.
+.
+lane :beta do
+increment_build_number
+.
+.
+.
+</code></pre>
+
+<p><br/>
+<br/>
+我们使用Slack的webHooks来监测测试及打包出错的情况：
+<br/>
+Slack中添加一个 <strong>Incoming WebHooks</strong>，选择一个你想收取消息的Channel。
+<br/>
+App Directory &gt; Browse Apps &gt; Custom Integrations &gt; Incoming WebHooks
+<br/>
+配置Fastfile，并在 <em>error do</em> 中触发Slack的消息通知。
+<br/></p>
+
+<pre><code>.
+.
+.
+before_all do
+    ENV[&quot;SLACK_URL&quot;] = &quot;https://hooks.slack.com/services/XXX/XXX/XXX&quot;
+end
+.
+.
+.
+error do |lane, exception|
+    slack(
+      message: exception.message,
+      success: false
+    )
+end
+.
+.
+.
+</code></pre>
+
+<p><br/>
+<br/>
+接着在xcode中，Build Setting -&gt; Versioning -&gt; Current Project Verstion 填上当前的build版本
+<br/>
+如果开启了两步验证，还需要到<a href='https://appleid.apple.com/account/manage' target='_blank'><a href="https://appleid.apple.com/account/manage">https://appleid.apple.com/account/manage</a></a>去生成一个专用密码。
+<br/>
+<br/>
+然后测试一下：</p>
+
+<pre><code>$ fastlane beta
+</code></pre>
+
+<p>如果一切正常，新版本的App会上传到iTunesConnect，处理完成后会收到邮件，同时iPhone上会收到TestFight的提醒，直接更新后即可测试。
+<br/>
+<br/>
+<br/></p>
+
+<p><a name="chapter4"></a></p>
+
+<h4 id="自动化"><strong>自动化</strong></h4>
+
+<hr />
+
+<p>我们使用Git的hooks来完成自动化，在local有新的commit时触发测试及打包上传的流程。
+<br/> <em>关于hooks的使用可以参考<u><a href='https://github.com/geeeeeeeeek/git-recipes/wiki/5.4-Git%E9%92%A9%E5%AD%90%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81' target='_blank'>这篇文章</em> </a></u>
+<br/></p>
+
+<ul>
+<li>提交前进行测试（如果需要的话）：
+<br/>进入 .git，新建 hooks/pre-commit 文件，加入可执行权限：</li>
+</ul>
+
+<pre><code>
+$ mkdir .git/hooks
+$ touch .git/hooks/pre-commit
+$ echo '#!/bin/sh' &gt;&gt; .git/hooks/pre-commit
+$ echo 'fastlane test' &gt;&gt; .git/hooks/pre-commit
+$ chmod +x .git/hooks/pre-commit
+</code></pre>
+
+<p><em>测试失败会取消提交操作</em>
+<br/>
+<br/></p>
+
+<ul>
+<li>提交后自动打包上传：
+<br/>进入 .git，新建 hooks/post-commit 文件，加入可执行权限：</li>
+</ul>
+
+<pre><code>
+$ mkdir .git/hooks
+$ touch .git/hooks/post-commit
+$ echo '#!/bin/sh' &gt;&gt; .git/hooks/post-commit
+$ echo 'fastlane beta' &gt;&gt; .git/hooks/post-commit
+$ chmod +x .git/hooks/post-commit
+</code></pre>
+
+<p>再测试一下：</p>
+
+<pre><code>
+$ git add --all
+$ git commit -m 'package and uplaod test'
+
+</code></pre>
+
+<p>如果一切顺利，在commit以后即开始刚才的打包上传流程。</p>
+
+<p><em>另外，GUI的Git客户端可能不支持hooks，测试过SourceTree不支持，其他未知。</em>
+<br/>
+<br/>
+<br/></p>
+
+<h4 id="最后"><strong>最后</strong></h4>
+
+<hr />
+
+<p>至此，我们已将文章开头的流程变为了：
+<br/>
+<br/>
+开发 -&gt; Git提交 -&gt; <strong>抽身于其他事</strong> -&gt; <strong>收到测试提醒</strong> -&gt; 测试 -&gt; 发布
+<br/>
+<br/>
+而其中的 <strong>打包 -&gt; 上传iTunesConnect</strong> 已经实现自动化，从此以后再也不用盯着xcode等打包上传了，而且使用fastlane上传的出错率极低，以前 【上传很久结果等回的是xcode一个莫名的报错】 的日子将一去不复返。</p>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">2017-07-06 21:18:10 &#43;0800 CST</span>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="clear"></div>
+                <div class="post-nav">
+                    
+                    <a class="post-nav-older" title="Next post: iOS中多语言本地化流程的优化" href="https://antscript.com/post/2017-08-08-ios-localized-optimization/">&laquo; iOS中多语言本地化流程的优化</a>
+                    
+                    
+                    <a class="post-nav-newer" title="Previous post: LayAuto - Mac上的智能窗口管理软件" href="https://antscript.com/post/2017-06-14-layauto/">LayAuto - Mac上的智能窗口管理软件 &raquo;</a>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="credits section">
+    <div class="credits-inner section-inner">
+        <p class="credits-left">
+            <span>Copyright</span> &copy; 2014-2017 <a href="https://antscript.com/" title="AntScript"> AntScript.com</a>
+        </p>
+        <p class="credits-right">
+            <span>Powered by <a href="http://www.hugo.org" target="_blank">Hugo</a> | Theme by <a href="http://www.andersnoren.se"  target="_blank">Anders Noren</a> &mdash; </span><a title="To the top" class="tothetop">Up &uarr;</a>
+        </p>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
+
+
+
+
+
+</body>
+
+</html>
