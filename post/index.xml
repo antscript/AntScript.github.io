@@ -16,10 +16,10 @@
     
     <item>
       <title>在 WKWebView 中注入 js 的时机</title>
-      <link>https://antscript.com/post/2018-06-28-WKWebview-JS/</link>
+      <link>https://antscript.com/post/2018-06-28-wkwebview-JS/</link>
       <pubDate>Thu, 28 Jun 2018 10:10:31 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2018-06-28-WKWebview-JS/</guid>
+      <guid>https://antscript.com/post/2018-06-28-wkwebview-JS/</guid>
       <description>&lt;p&gt;最近使用 WKWebView 嵌入网页，需要在页面中注入 js，记录一下遇到的坑。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Swift使用Decodable解析JSON时的一个小问题</title>
-      <link>https://antscript.com/post/2018-03-14-iOS-decodable-empty-json/</link>
+      <link>https://antscript.com/post/2018-03-14-ios-decodable-empty-json/</link>
       <pubDate>Fri, 06 Apr 2018 21:12:22 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2018-03-14-iOS-decodable-empty-json/</guid>
+      <guid>https://antscript.com/post/2018-03-14-ios-decodable-empty-json/</guid>
       <description>&lt;p&gt;从Swift4开始提供的Decodable解析JSON确实很方便，但遇到一个小问题，记录一下。&lt;/p&gt;
 
 &lt;p&gt;当JSON中某个key的值为{}或者空字符串&amp;rdquo;&amp;ldquo;，而该值需要解析的不是基本类型时，即使标记为 Optional，依然会导致整个解析失败：&lt;/p&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Swift中图片资源使用流程的优化</title>
-      <link>https://antscript.com/post/2018-01-14-iOS-Assets-Optimization/</link>
+      <link>https://antscript.com/post/2018-01-14-ios-assets-optimization/</link>
       <pubDate>Sun, 14 Jan 2018 10:38:33 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2018-01-14-iOS-Assets-Optimization/</guid>
+      <guid>https://antscript.com/post/2018-01-14-ios-assets-optimization/</guid>
       <description>&lt;p&gt;去年发布的Xcode9支持在代码编辑中直接插入图片，类似如下效果&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://cdn.antscript.com/@/antscript.com/upload/images/2018-01-14/assets_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -121,10 +121,10 @@
     
     <item>
       <title>ErgoDox小坑 - Command键失灵</title>
-      <link>https://antscript.com/post/2017-11-21-Ergodox/</link>
+      <link>https://antscript.com/post/2017-11-21-ergodox/</link>
       <pubDate>Mon, 20 Nov 2017 22:01:23 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-11-21-Ergodox/</guid>
+      <guid>https://antscript.com/post/2017-11-21-ergodox/</guid>
       <description>&lt;h4 id=&#34;今天不知什么操作-导致ergodox无法输出-command-键&#34;&gt;今天不知什么操作，导致Ergodox无法输出⌘(Command)键。&lt;/h4&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -132,10 +132,10 @@
     
     <item>
       <title>iOS中多语言本地化流程的优化</title>
-      <link>https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/</link>
+      <link>https://antscript.com/post/2017-08-08-ios-localized-optimization/</link>
       <pubDate>Tue, 08 Aug 2017 19:28:33 +0800</pubDate>
       <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/</guid>
+      <guid>https://antscript.com/post/2017-08-08-ios-localized-optimization/</guid>
       <description>&lt;p&gt;本文从提升效率和减少错误两方面对传统的多语言本地化方式进行了优化，虽然标题是iOS，但其实macOS也通用。&lt;/p&gt;
 
 &lt;ul&gt;
