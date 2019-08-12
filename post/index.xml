@@ -9,10 +9,21 @@
     <managingEditor>antscript@gmail.com (AntScript)</managingEditor>
     <webMaster>antscript@gmail.com (AntScript)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 28 Jun 2018 10:10:31 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Sep 2018 20:12:11 +0800</lastBuildDate>
     
 	<atom:link href="https://antscript.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iOS/macOS 中显示带颜色的日志信息</title>
+      <link>https://antscript.com/post/2018-09-12-display-ansi-escape-code/</link>
+      <pubDate>Wed, 12 Sep 2018 20:12:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2018-09-12-display-ansi-escape-code/</guid>
+      <description>&lt;p&gt;需要将输出的日志信息显示出来，几经周折终于实现了。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>在 WKWebView 中注入 js 的时机</title>
