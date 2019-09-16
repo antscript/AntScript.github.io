@@ -9,10 +9,54 @@
     <managingEditor>antscript@gmail.com (AntScript)</managingEditor>
     <webMaster>antscript@gmail.com (AntScript)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 12 Sep 2018 20:12:11 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Sep 2019 07:18:11 +0800</lastBuildDate>
     
 	<atom:link href="https://antscript.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>02. 定价及试用策略 | 手把手教你在 Mac App Store 之外销售软件</title>
+      <link>https://antscript.com/post/2019-09-16-outside-store-02/</link>
+      <pubDate>Mon, 16 Sep 2019 07:18:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-09-16-outside-store-02/</guid>
+      <description>&lt;h1 id=&#34;如何定价&#34;&gt;如何定价&lt;/h1&gt;
+
+&lt;p&gt;定价从来都不是一门简单的学问，而对于数字商品来说更是如此。实物商品人们大概能够估算出商品的成本以及给自己带来的价值，进而根据经验判断商品价格是否合适；&lt;strong&gt;但数字商品人们几乎不会考虑其成本因素，只会预测其对自己的价值如何，从而判断该数字商品是否值得购买。&lt;/strong&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>01. 思考及评估 | 手把手教你在 Mac App Store 之外销售软件</title>
+      <link>https://antscript.com/post/2019-09-16-outside-store-01/</link>
+      <pubDate>Mon, 16 Sep 2019 07:15:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-09-16-outside-store-01/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>00. 开篇 | 手把手教你在 Mac App Store 之外销售软件</title>
+      <link>https://antscript.com/post/2019-09-16-outside-store-00/</link>
+      <pubDate>Mon, 16 Sep 2019 07:12:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-09-16-outside-store-00/</guid>
+      <description>&lt;h1 id=&#34;背景信息&#34;&gt;背景信息&lt;/h1&gt;
+
+&lt;p&gt;两年前开发了一款 macOS 上的窗口管理软件 &lt;a href=&#34;https://layautoapp.com&#34; title=&#34;LayAuto 网站&#34;&gt;LayAuto&lt;/a&gt;，经过几个月的摸索将其放到互联网上（&lt;em&gt;Mac App Store 之外&lt;/em&gt; ）面向全球用户进行销售，其最后一次更新已是2017年12月，但至今依然每月能够售出十几份到几十份不等，虽然离财务自由还远不够，但作为女儿的尿布钱也还是绰绰有余的，勉强实现了拥有所谓『睡后收入』的小目标，真香。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>更新计划 | 手把手教你在 Mac App Store 之外销售软件</title>
+      <link>https://antscript.com/post/2019-09-15-outside-store-start/</link>
+      <pubDate>Sun, 15 Sep 2019 20:12:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-09-15-outside-store-start/</guid>
+      <description>&lt;h1 id=&#34;一句话介绍&#34;&gt;一句话介绍&lt;/h1&gt;
+
+&lt;p&gt;这是一个讲解如何在互联网上推广-销售-维护软件，并把收入提款至个人的银行卡的手把手图文系列教程。更多信息请查看这篇文章。
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>iOS/macOS 中显示带颜色的日志信息</title>
