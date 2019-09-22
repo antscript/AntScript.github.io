@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
-    <title>go交叉编译(跨平台编译 cross compile) | 只想安静的做个码农</title>
+    <title>Mac 键盘失灵 | 只想安静的做个码农</title>
     <script>
     document.documentElement.className = document.documentElement.className.replace("no-js", "js");
     </script>
@@ -219,103 +219,41 @@
         <div class="posts">
             <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
                 <div class="post-bubbles">
-                    <a href="https://antscript.com/post/2015-05-06-golang-cross-compile/" class="format-bubble" title="go交叉编译(跨平台编译 cross compile)"></a>
+                    <a href="https://antscript.com/post/2019-05-15-mac-keyboard-failure/" class="format-bubble" title="Mac 键盘失灵"></a>
                 </div>
                 <div class="content-inner">
                     <div class="post-header">
                         
                         
-                        <h2 class="post-title">go交叉编译(跨平台编译 cross compile)</h2>
+                        <h2 class="post-title">Mac 键盘失灵</h2>
                     </div>
                     
                     <div class="post-content">
-                        <h3 id="最方便的交叉编译工具gox">最方便的交叉编译工具gox</h3>
-
-<h1 id="a-href-https-github-com-mitchellh-gox-target-blank-https-github-com-mitchellh-gox-a"><a href="https://github.com/mitchellh/gox" target="_blank"><a href="https://github.com/mitchellh/gox">https://github.com/mitchellh/gox</a></a></h1>
-
-<hr>
-
-<h2 id="安装">安装</h2>
-
-<p><code>$ go get github.com/mitchellh/gox</code></p>
-
-<p><code>$ gox -build-toolchain</code></p>
-
-<h2 id="帮助">帮助</h2>
-
-<p><code>$ gox -h</code></p>
-
-<h2 id="使用">使用</h2>
-
-<p><code>$ cd [project dir]</code></p>
-
-<p><code>$ gox</code></p>
-
-<p>or</p>
-
-<p><code>$ gox github.com/user/project</code></p>
-
-<h2 id="指定平台">指定平台</h2>
-
-<p><code>$ gox -os=&quot;darwin&quot; //同时编译Mac平台的32和64位程序</code></p>
-
-<p><code>$ gox -osarch=&quot;linux/amd64&quot; //只编译linux下的64位程序</code></p>
+                        <p>很久没重启，今天重启以后不记得操作了什么，键盘失灵了。</p>
 
 <p></p>
 
-<hr>
+<h2 id="系统">系统</h2>
 
-<h3 id="gox虽好但无法交叉编译带有cgo的程序">gox虽好但无法交叉编译带有Cgo的程序</h3>
+<p>10.15（Catalina Beta）</p>
 
-<p><img src="http://antscript.com/wp-content/uploads/2015/07/QQ20150706-12.png" alt="QQ20150706-1" width="1232" height="756" class="aligncenter size-full wp-image-215" /></p>
+<h2 id="症状">症状</h2>
 
-<p>这时就需要借助xgo来编译了</p>
+<p>单按键盘字母键无反应，但快捷键组合键（⌘ + C 之类）正常。</p>
 
-<h2 id="a-href-https-github-com-karalabe-xgo-target-blank-https-github-com-karalabe-xgo-a"><a href="https://github.com/karalabe/xgo" target="_blank"><a href="https://github.com/karalabe/xgo">https://github.com/karalabe/xgo</a></a></h2>
+<h2 id="解决">解决</h2>
 
-<p>安装
-<code>$ go get github.com/karalabe/xgo</code></p>
+<p>搜了下有很多键盘失灵的通过按5次 option 键就好了，试了下发现没有作用。深入研究，发现按5次 option 是关闭鼠标键的作用，于是抱着试一试的心态：</p>
 
-<p>使用xgo需要先安装docker</p>
+<p><strong>System Preferences</strong> -&gt; <strong>Accessibility</strong> -&gt; <strong>Pointer Control</strong> -&gt; <strong>Alternate Control Methods</strong></p>
 
-<p><a href="https://www.docker.com/" target="_blank"><a href="https://www.docker.com/">https://www.docker.com/</a></a></p>
+<p>打开再关闭 <strong>Enable Mouse Keys</strong></p>
 
-<p>之前没接触过docker也没关系，照官网安装好即可</p>
-
-<p>Mac上启动boot2docker
-然后</p>
-
-<p><code>$ docker pull karalabe/xgo-latest</code></p>
-
-<p>需要下载的文件较大，下载完后就可以使用xgo了</p>
-
-<p><code>$ xgo github.com/project-iris/iris</code></p>
-
-<p>在安装docker的时候遇到了一些问题，第一次安装成功后能正常使用，关闭后再进入提示以下问题</p>
-
-<p><code>Post http:///var/run/docker.sock/v1.16/containers/create:</code></p>
-
-<p><code>dial unix /var/run/docker.sock: no such file or directory.</code></p>
-
-<p><code>Are you trying to connect to a TLS-enabled daemon without TLS?</code></p>
-
-<p>解决方案是在~/etc/profile中加入</p>
-
-<p><code>eval &quot;$(boot2docker shellinit)&quot;</code></p>
-
-<p>还有这个问题</p>
-
-<p><code>An error occurred trying to connect: Get https://192.168.59.103:2376/v1.19/version: x509: certificate is valid for 127.0.0.1, 10.0.2.15, not 192.168.59.103</code></p>
-
-<p>解决方法是执行</p>
-
-<p><code>boot2docker ssh sudo /etc/init.d/docker restart</code></p>
-
-<p>来自<a href="http://vielmetti.typepad.com/vacuum/2015/06/docker-170-issues-problems-with-mac-and-boot2docker-arm-and-disk-size-of-images.html" target="_blank"><a href="http://vielmetti.typepad.com/vacuum/2015/06/docker-170-issues-problems-with-mac-and-boot2docker-arm-and-disk-size-of-images.html">http://vielmetti.typepad.com/vacuum/2015/06/docker-170-issues-problems-with-mac-and-boot2docker-arm-and-disk-size-of-images.html</a></a></p>
+<p>好了。</p>
                     </div>
                     
                     <div class="post-meta">
-                        <span class="post-date">2015-05-06 06:30:12 &#43;0800 CST</span>
+                        <span class="post-date">2019-05-15 10:40:11 &#43;0800 CST</span>
                     </div>
                     
                     
@@ -324,10 +262,10 @@
                 <div class="clear"></div>
                 <div class="post-nav">
                     
-                    <a class="post-nav-older" title="Next post: Xcode中搜索功能增强工具【Code Pilot】" href="https://antscript.com/post/2015-08-14-xcode-tools-codepilot/">&laquo; Xcode中搜索功能增强工具【Code Pilot】</a>
+                    <a class="post-nav-older" title="Next post: 更新计划 | 手把手教你在 Mac App Store 之外销售软件" href="https://antscript.com/post/2019-09-15-outside-store-start/">&laquo; 更新计划 | 手把手教你在 Mac App Store 之外销售软件</a>
                     
                     
-                    <a class="post-nav-newer" title="Previous post: 夏洛克俱乐部1.0 — 用二维码分发你的文件" href="https://antscript.com/post/2015-04-19-sharelock-club-1-0-release/">夏洛克俱乐部1.0 — 用二维码分发你的文件 &raquo;</a>
+                    <a class="post-nav-newer" title="Previous post: iOS/macOS 中显示带颜色的日志信息" href="https://antscript.com/post/2018-09-12-display-ansi-escape-code/">iOS/macOS 中显示带颜色的日志信息 &raquo;</a>
                     
                     <div class="clear"></div>
                 </div>
