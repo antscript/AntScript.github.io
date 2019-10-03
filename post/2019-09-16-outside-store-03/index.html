@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
-    <title>ErgoDox中级指南 - 自定义组合键 | 只想安静的做个码农</title>
+    <title>03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件 | 只想安静的做个码农</title>
     <script>
     document.documentElement.className = document.documentElement.className.replace("no-js", "js");
     </script>
@@ -219,173 +219,170 @@
         <div class="posts">
             <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
                 <div class="post-bubbles">
-                    <a href="https://antscript.com/post/2016-06-02-ergodox-custom-layout-2/" class="format-bubble" title="ErgoDox中级指南 - 自定义组合键"></a>
+                    <a href="https://antscript.com/post/2019-09-16-outside-store-03/" class="format-bubble" title="03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件"></a>
                 </div>
                 <div class="content-inner">
                     <div class="post-header">
                         
                         <div class="featured-media">
-                            <img width="766" height="284" src="https://cdn.antscript.com/@/antscript.com/images/2016/05/03/ergodox.jpg" class="attachment-post-image wp-post-image" alt="ErgoDox中级指南 - 自定义组合键" />
+                            <img width="766" height="284" src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/outside_store_title.png" class="attachment-post-image wp-post-image" alt="03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件" />
                         </div>
                         
                         
-                        <h2 class="post-title">ErgoDox中级指南 - 自定义组合键</h2>
+                        <h2 class="post-title">03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件</h2>
                     </div>
                     
                     <div class="post-content">
-                        <ul>
-<li><a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter1">目的</a></li>
-<li><a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter2">所需工具</a></li>
-<li><a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter3">定义键位</a></li>
-<li><a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter4">编译文件</a></li>
-<li><a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter5">刷入键盘</a></li>
-<li><a href="https://antscript.com/post/2016-06-02-Ergodox-custom-layout-2/#chapter6">使用感受</a></li>
-</ul>
+                        <h1 id="域名注册">域名注册</h1>
 
-<p></p>
+<h2 id="选择域名">选择域名</h2>
 
-<p><a name="chapter1"></a></p>
-
-<hr />
-
-<h1 id="目的">目的</h1>
-
-<hr />
-
-<h4 id="自定义组合键"><strong>自定义组合键</strong></h4>
-
-<h5 id="上一篇-post-2016-05-03-ergodox-custom-layout-1-讲了如何自定义键位-这一篇主要讲如何自定义组合键"><strong><a href="https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/">上一篇</a></strong>讲了如何自定义键位，这一篇主要讲如何自定义组合键。</h5>
-
-<p>例如 复制，粘贴，剪切，保存，以及根据自己的需求进行定义。</p>
-
-<p><a name="chapter2"></a></p>
-
-<hr />
-
-<h1 id="所需工具">所需工具</h1>
-
-<hr />
-
-<h3 id="1-fork或者clone一个-tmk-keynoard-https-github-com-cub-uanic-tmk-keyboard-到本地">1. <strong>Fork或者Clone一个 <em><a href="https://github.com/cub-uanic/tmk_keyboard">tmk_keynoard</a></em> 到本地：</strong></h3>
-
-<h4 id="github-com-cub-uanic-tmk-keyboard-https-github-com-cub-uanic-tmk-keyboard"><a href="https://github.com/cub-uanic/tmk_keyboard">github.com/cub-uanic/tmk_keyboard</a></h4>
-
-<h4 id="这是一个tmk-keyboard的fork-里面已经有ergodox的配置-可以直接修改使用">这是一个tmk_keyboard的Fork,里面已经有Ergodox的配置，可以直接修改使用。</h4>
-
-<h3 id="2-编译需要一些工具-可通过如下方法安装">2. <strong>编译需要一些工具，可通过如下方法安装：</strong></h3>
-
-<pre><code>
-brew install Caskroom/cask/crosspack-avr
-或者
-brew tap osx-cross/avr &amp;&amp; brew install avr-libc
-
-</code></pre>
-
-<h4 id="记得把-usr-local-crosspack-avr-20131216-bin-加入到path中">记得把 <em>/usr/local/CrossPack-AVR-20131216/bin</em> 加入到Path中</h4>
-
-<h5 id="以上是mac下使用homebrew安装的-其他方式编译不过可根据提示自行配置-windows大同小异">(以上是Mac下使用homebrew安装的，其他方式编译不过可根据提示自行配置，Windows大同小异)</h5>
-
-<h5 id="参考链接"><em>参考链接：</em></h5>
-
-<h5 id="http-maxembedded-com-2015-06-setting-up-avr-gcc-toolchain-on-linux-and-mac-os-x-step2-http-maxembedded-com-2015-06-setting-up-avr-gcc-toolchain-on-linux-and-mac-os-x-step2"><a href="http://maxembedded.com/2015/06/setting-up-avr-gcc-toolchain-on-linux-and-mac-os-x/#step2">http://maxembedded.com/2015/06/setting-up-avr-gcc-toolchain-on-linux-and-mac-os-x/#step2</a></h5>
-
-<h5 id="https-www-obdev-at-products-crosspack-download-html-https-www-obdev-at-products-crosspack-download-html"><a href="https://www.obdev.at/products/crosspack/download.html">https://www.obdev.at/products/crosspack/download.html</a></h5>
-
-<p><a name="chapter3"></a></p>
-
-<hr />
-
-<h1 id="定义键位">定义键位</h1>
-
-<hr />
-
-<h4 id="编辑文件-tmk-keyboard-keyboard-ergodox-keymap-c">编辑文件：<em>tmk_keyboard/keyboard/ergodox/keymap.c</em></h4>
-
-<h4 id="1-按照之前使用的键位进行定义">1.按照之前使用的键位进行定义</h4>
-
-<h4 id="2-自定义组合键">2.自定义组合键:</h4>
+<p>如果你以前没有注册过域名，那么有以下优先级供参考供参考：</p>
 
 <ul>
-<li>组合键定义在 <em>fn_actions</em> 中</li>
-<li>使用函数 ACTION_MODS_KEY(mods,key)</li>
-<li>使用FN*进行调用</li>
+<li>软件名的 <strong>com</strong> 域名（例如 sketch.com、1password.com）</li>
+<li>软件名的 <strong>app</strong> 域名（例如 bear.app）</li>
+<li>能用域名+后缀组成软件名的域名 （例如 del.icio.us）</li>
+<li><strong>软件名+app</strong> 或者 <strong>get+软件名</strong> 的 <strong>com</strong> 域名 （例如 alfredapp.com、getpocket.com）</li>
+<li><strong>软件名 + 软件功能相关</strong>的域名 （例如 workflow.tools、tower.im 以及 io、ai 等域名后缀）</li>
 </ul>
 
-<pre><code>例：
-static const uint16_t PROGMEM fn_actions[] = {
-    ACTION_FUNCTION(TEENSY_KEY),                    // FN0 - Teensy key
-    ACTION_LAYER_MOMENTARY(1),                      // FN1 - switch to Layer1
-    ACTION_LAYER_TOGGLE(2),                         // FN2 - switch to Layer2
-    ACTION_LAYER_MOMENTARY(3),                      // FN3 - toggle Layer3 aka Numpad
-    ACTION_LAYER_SET(0, ON_PRESS),                  // FN4 - set Layer0
+<p>总之好的域名就是能让人印象深刻且容易记忆。
+</p>
 
-    ACTION_MODS_KEY(MOD_LGUI,KC_C),                 // FN5 - command + C  复制
-    ACTION_MODS_KEY(MOD_LGUI,KC_V),                 // FN6 - command + V  粘贴
-    ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT , KC_Z),    // FN7 - command + shift + Z
-}
+<h2 id="注册">注册</h2>
 
-然后在上面的Layer中将键位定义为对应的FN*即可
+<p>域名注册的服务商很多，随意选一个可以自由转出的即可，我们这里使用 <a href="https://www.namecheap.com" title="NameCheap">NameCheap</a> 来注册。</p>
+
+<p>登入网站，输入我们想要的域名进行查询：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-1.png" alt="image-20190705143659342" /></p>
+
+<p>查询后会最上方会列出 com 域名的结果，下面还有一些常用的域名：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-2.png" alt="image-20190705144528231" /></p>
+
+<p>如果都没有满意的或者已经被注册了，拉到下面，搜索更多域名后缀：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-3.png" alt="image-20190705144628350" /></p>
+
+<p>有很多分类，由于是演示，注册一个最便宜的：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-4.png" alt="image-20190705144723685" /></p>
+
+<p>右侧进入购物车：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-5.png" alt="image-20190705144823065" /></p>
+
+<p>其中免费赠送一年的 Whois 隐藏（别人不能通过域名查询到你的信息），建议勾选上，然后确定订单：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-6.png" alt="image-20190705145348664" /></p>
+
+<p>提醒登录，或者注册一个账号：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-7.png" alt="image-20190705145752831" /></p>
+
+<p>公司相关的不用勾选，大概填一下，然后 <strong>Continue</strong>：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-8.png" alt="image-20190705150358184" /></p>
+
+<p>继续 <strong>Continue</strong>，我们使用 Paypal 付款（如果付款有问题，可以选择其他支持支付宝的注册商，例如 GoDaddy），完成后等几分钟，就能在管理后台看到我们刚注册的域名了：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-9.png" alt="image-20190705150941596" /></p>
+
+<p>到这里域名注册已完成，进现在进入下一步。</p>
+
+<h1 id="购买服务器">购买服务器</h1>
+
+<h2 id="选择提供商">选择提供商</h2>
+
+<p>服务器的提供商有很多，这里我们使用 Vultr 作为演示，也是 LayAuto 一直使用的服务器提供商，它的特点是性价比较高、机房选择众多、网络线路还行、操作和灵活度都较大。</p>
+
+<p>目前通过我的推荐链接 <a href="https://www.vultr.com/?ref=7832790-4F">https://www.vultr.com/?ref=7832790-4F</a> 进行注册可以获得50美元的试用券（如果后续你进行了消费，我也能获得奖励），作为测试足够使用了。</p>
+
+<p>注册成功后，需要绑定信用卡才能部署服务器，这里我们选择仅绑定，绑定时会有1美元的扣款确认，确认成功后会退回1美元，绑定成功后可以随时解绑：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-10.png" alt="image-20190705154851840" /></p>
+
+<p>绑定完成后进入服务器部署页面，部署一台我们的服务器：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-11.png" alt="image-20190705153158782" /></p>
+
+<p>根据软件的受众，如果是面向国内的，建议使用日本 <strong>Tokyo</strong> 或者 <strong>Singapore</strong> 的节点，如果面向全球的，可以考虑美国的节点，<strong>Los Angeles</strong> 的节点对国内的访问也较为友好。</p>
+
+<p>系统选一个自己比较熟的，这里使用 <strong>CentOS</strong>，服务器配置使用最低的 <strong>$5/mo</strong> 的就够用了：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-12.png" alt="image-20190705153618929" /></p>
+
+<p>把我们自己的 SSH Key 配置到服务器上，方便以后登录操作服务器：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-13.png" alt="image-20190705153739646" /></p>
+
+<p>命令行中  <code>cat ~/.ssh/id_rsa.pub</code> 将 SSH Key 的公钥打印出来，然后粘贴进去：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-14.png" alt="image-20190705154345495" /></p>
+
+<p>成功后可以看到已经加入的 SSH Key，<strong>选中它</strong>，接着我们 <strong>Deploy Now</strong>：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-15.png" alt="image-20190705155336664" /></p>
+
+<p>由于某些原因，Vultr 的 IP 被封的很严重，这里我们可以多开几台，其中 Tokey 的 IP 被污染的很严重，要开一台能用的很不容易。</p>
+
+<p>等待服务器部署成功，查看服务器的 IP ，我们要先确认是不是之前被封了的 IP ：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-16.png" alt="image-20190705160751934" /></p>
+
+<p>这样的情况就是 IP 已经被封了：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-17.png" alt="image-20190705155922100" /></p>
+
+<p>这样能 Ping 通就是 IP 还可用：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-18.png" alt="image-20190705160838332" /></p>
+
+<p>这里我们使用这台 Los Angeles 的进行演示，命令行里使用 ssh 命令登录：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-19.png" alt="image-20190705161438566" /></p>
+
+<p>安装 Nginx <code>yum install -y nginx</code>：</p>
+
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-20.png" alt="image-20190705161832844" /></p>
+
+<p>启动 nginx，打开80和443端口，重启防火墙：</p>
+
+<pre><code class="language-bash">firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=443/tcp --permanent
+firewall-cmd --reload
 </code></pre>
 
-<h5 id="还有一些更高级的用法-例如定义宏-可参考下面链接">还有一些更高级的用法（例如定义宏）可参考下面链接：</h5>
+<p>浏览器中输入 IP 进行访问，如果出现 Nginx 的欢迎页面，则说明配置成功：</p>
 
-<p><a href="https://github.com/cub-uanic/tmk_keyboard/blob/master/tmk_core/doc/keymap.md#21-key-action">https://github.com/cub-uanic/tmk_keyboard/blob/master/tmk_core/doc/keymap.md#21-key-action</a></p>
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/3-21.png" alt="image-20190705162449742" /></p>
 
-<p><a name="chapter4"></a></p>
+<p>为了增加服务器的安全性，我们还需要将密码登录关闭：</p>
 
-<hr />
+<pre><code># 修改配置文件
+vi /etc/ssh/sshd_config
+RSAAuthentication yes #RSA认证
+PubkeyAuthentication yes #开启公钥验证
+AuthorizedKeysFile .ssh/authorized_keys #验证文件路径
+PasswordAuthentication no #禁止密码认证
+PermitEmptyPasswords no #禁止空密码
 
-<h1 id="编译文件">编译文件</h1>
-
-<hr />
-
-<pre><code>cd tmk_keyboard/keyboard/ergodox
-
-# just to be safe
-make -f Makefile.lufa clean
-
-# use one of these
-make -f Makefile.lufa
+重启SSH服务，systemctl restart sshd
 </code></pre>
 
-<h4 id="编译成功会生成一个类似-tmk-keyboard-keyboard-ergodox-ergodox-lufa-hex-的文件">编译成功会生成一个类似 <strong>tmk_keyboard/keyboard/ergodox/ergodox_lufa.hex</strong> 的文件。</h4>
-
-<h5 id="如果编译不成功-自行google问题提示解决">如果编译不成功，自行google问题提示解决。</h5>
-
-<h5 id="参考链接-1">参考链接：</h5>
-
-<p><a href="https://github.com/cub-uanic/tmk_keyboard/blob/master/keyboard/ergodox/Ergodox-FAQ.md">https://github.com/cub-uanic/tmk_keyboard/blob/master/keyboard/ergodox/Ergodox-FAQ.md</a></p>
-
-<p><a name="chapter5"></a></p>
+<p>至此我们的服务器购买完成。</p>
 
 <hr />
 
-<h1 id="刷入键盘">刷入键盘</h1>
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/qr.jpeg" alt="img" /></p>
 
-<hr />
-
-<h3 id="和-上一篇-post-2016-05-03-ergodox-custom-layout-1-chapter4-文章同样的方法将hex文件刷入键盘">和 <strong><a href="https://antscript.com/post/2016-05-03-Ergodox-custom-layout-1/#chapter4">上一篇</a></strong> 文章同样的方法将hex文件刷入键盘。</h3>
-
-<p><a name="chapter6"></a></p>
-
-<hr />
-
-<h1 id="使用感受">使用感受</h1>
-
-<hr />
-
-<ul>
-<li>一定一定一定买无刻印键帽，方便边用边优化适合自己的布局。</li>
-<li>打字确实舒适不少。</li>
-<li>习惯需要了大概两三周的时间。</li>
-<li>配合一些其他的软件及浏览器插件进行使用，可最大程度减少使用鼠标/触摸板，双手不离开键盘，效率有所提高，关键是将手放键盘上也比较舒适。</li>
-<li>键盘的下边缘略硌手，自己加一个脚垫将键盘远端垫高形成一个角度，舒适很多。</li>
-<li><strong>多思考多尝试，不断迭代，打造一款适合自己的Ergodox。</strong></li>
-</ul>
+<p>关注【代码内外】公众号，获取最新文章。</p>
                     </div>
                     
                     <div class="post-meta">
-                        <span class="post-date">2016-06-02 21:12:21 &#43;0800 CST</span>
+                        <span class="post-date">2019-10-03 11:25:11 &#43;0800 CST</span>
                     </div>
                     
                     
@@ -394,10 +391,10 @@ make -f Makefile.lufa
                 <div class="clear"></div>
                 <div class="post-nav">
                     
-                    <a class="post-nav-older" title="Next post: ASHUD - 用Swift写的HUD库(OS X)" href="https://antscript.com/post/2016-06-06-ashud/">&laquo; ASHUD - 用Swift写的HUD库(OS X)</a>
+                    <a class="post-nav-older" title="Next post: 04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件" href="https://antscript.com/post/2019-09-16-outside-store-04/">&laquo; 04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件</a>
                     
                     
-                    <a class="post-nav-newer" title="Previous post: ErgoDox初级指南 - 入手及自定义键位" href="https://antscript.com/post/2016-05-03-ergodox-custom-layout-1/">ErgoDox初级指南 - 入手及自定义键位 &raquo;</a>
+                    <a class="post-nav-newer" title="Previous post: 02. 定价及试用策略 | 手把手教你在 Mac App Store 之外销售软件" href="https://antscript.com/post/2019-09-16-outside-store-02/">02. 定价及试用策略 | 手把手教你在 Mac App Store 之外销售软件 &raquo;</a>
                     
                     <div class="clear"></div>
                 </div>

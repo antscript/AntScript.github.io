@@ -9,10 +9,46 @@
     <managingEditor>antscript@gmail.com (AntScript)</managingEditor>
     <webMaster>antscript@gmail.com (AntScript)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 16 Sep 2019 07:18:11 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Oct 2019 11:26:11 +0800</lastBuildDate>
     
 	<atom:link href="https://antscript.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件</title>
+      <link>https://antscript.com/post/2019-09-16-outside-store-04/</link>
+      <pubDate>Thu, 03 Oct 2019 11:26:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-09-16-outside-store-04/</guid>
+      <description>&lt;h1 id=&#34;制作网站&#34;&gt;制作网站&lt;/h1&gt;
+
+&lt;p&gt;制作网页两种方式，一是完全自己来写，二是使用模板来修改。对于一般性的 App 或者前端不太熟的话，使用模板来修改已经足够了。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件</title>
+      <link>https://antscript.com/post/2019-09-16-outside-store-03/</link>
+      <pubDate>Thu, 03 Oct 2019 11:25:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-09-16-outside-store-03/</guid>
+      <description>&lt;h1 id=&#34;域名注册&#34;&gt;域名注册&lt;/h1&gt;
+
+&lt;h2 id=&#34;选择域名&#34;&gt;选择域名&lt;/h2&gt;
+
+&lt;p&gt;如果你以前没有注册过域名，那么有以下优先级供参考供参考：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;软件名的 &lt;strong&gt;com&lt;/strong&gt; 域名（例如 sketch.com、1password.com）&lt;/li&gt;
+&lt;li&gt;软件名的 &lt;strong&gt;app&lt;/strong&gt; 域名（例如 bear.app）&lt;/li&gt;
+&lt;li&gt;能用域名+后缀组成软件名的域名 （例如 del.icio.us）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软件名+app&lt;/strong&gt; 或者 &lt;strong&gt;get+软件名&lt;/strong&gt; 的 &lt;strong&gt;com&lt;/strong&gt; 域名 （例如 alfredapp.com、getpocket.com）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软件名 + 软件功能相关&lt;/strong&gt;的域名 （例如 workflow.tools、tower.im 以及 io、ai 等域名后缀）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;总之好的域名就是能让人印象深刻且容易记忆。
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>02. 定价及试用策略 | 手把手教你在 Mac App Store 之外销售软件</title>
