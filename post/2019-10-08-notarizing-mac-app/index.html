@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
-    <title>iOS中多语言本地化流程的优化 | 只想安静的做个码农</title>
+    <title>认证 Mac App (Notarization) | 只想安静的做个码农</title>
     <script>
     document.documentElement.className = document.documentElement.className.replace("no-js", "js");
     </script>
@@ -219,226 +219,73 @@
         <div class="posts">
             <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
                 <div class="post-bubbles">
-                    <a href="https://antscript.com/post/2017-08-08-ios-localized-optimization/" class="format-bubble" title="iOS中多语言本地化流程的优化"></a>
+                    <a href="https://antscript.com/post/2019-10-08-notarizing-mac-app/" class="format-bubble" title="认证 Mac App (Notarization)"></a>
                 </div>
                 <div class="content-inner">
                     <div class="post-header">
                         
                         <div class="featured-media">
-                            <img width="766" height="284" src="https://cdn.antscript.com/@/antscript.com/upload/images/2017-08-08/localized_title.jpg" class="attachment-post-image wp-post-image" alt="iOS中多语言本地化流程的优化" />
+                            <img width="766" height="284" src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/outside_store_title.png" class="attachment-post-image wp-post-image" alt="认证 Mac App (Notarization)" />
                         </div>
                         
                         
-                        <h2 class="post-title">iOS中多语言本地化流程的优化</h2>
+                        <h2 class="post-title">认证 Mac App (Notarization)</h2>
                     </div>
                     
                     <div class="post-content">
-                        <p>本文从提升效率和减少错误两方面对传统的多语言本地化方式进行了优化，虽然标题是iOS，但其实macOS也通用。</p>
+                        <p>随着今天 macOS Catalina(10.15) 正式版发布，Notarization 机制也开始启用，mac 商店外的 App 需要通过认证后才能得到系统的信任。
+</p>
 
-<ul>
-<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter1">传统的方法</a></u></li>
-<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter2">提升点效率</a></u></li>
-<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter3">减少些错误</a></u></li>
-<li><u><a href="https://antscript.com/post/2017-08-08-iOS-Localized-Optimization/#chapter4">自动化万岁</a></u></li>
-</ul>
+<p>官方文档 (<a href="https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow)[https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow">https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow)[https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow</a>]</p>
 
-<p>[2017.09.10]之前脚本有错误，经Lu_z_x指出现在已更正.</p>
+<h1 id="认证">认证</h1>
 
-<p></p>
+<p>由于开发者账号都有两步验证，所以需要先去 Apple ID 里创建一个专用密码（官方建议将其加入到 Keychain 中，使用会比较安全，具体看官方文档），用在下面：</p>
 
-<p><br/>
-<br/>
-<br/></p>
-
-<p><a name="chapter1"></a></p>
-
-<h4 id="传统的方法"><strong>传统的方法</strong></h4>
-
-<hr />
-
-<p>在 <strong>Localizable.strings</strong> 中写入多种语言的版本，然后使用 <strong>NSLocalizedString</strong> 进行本地化:</p>
-
-<pre><code># en.lproj/Localizable.strings
-&quot;login&quot; = &quot;Login&quot;;
-&quot;logout&quot; = &quot;Logout&quot;;
-
-# zh-Hans.lproj/Localizable.strings
-&quot;login&quot; = &quot;登录&quot;;
-&quot;logout&quot; = &quot;退出&quot;;
-
-# usage
-loginButton.title = NSLocalizedString(&quot;login&quot;, comment: &quot;login&quot;)
-logoutButton.title = NSLocalizedString(&quot;logout&quot;, comment: &quot;logout&quot;)
+<pre><code class="language-bash">xcrun altool --notarize-app --primary-bundle-id &quot;App_Bundle_ID&quot; --username &quot;APPLE_ID&quot; --password &quot;PASSWORD&quot; --file YOUR_APP.dmg
 </code></pre>
 
-<p><br/>
-这有什么问题呢？
-</br>
-繁琐！每次都要写 <strong>NSLocalizedString(&ldquo;xxx&rdquo;, comment: &ldquo;xxx&rdquo;)</strong> ，虽然有代码补全，但依然很费时。
-<br/>
-<br/>
-<br/></p>
+<p>成功后返回：</p>
 
-<p><a name="chapter2"></a></p>
-
-<h4 id="提升点效率"><strong>提升点效率</strong></h4>
-
-<hr />
-
-<p>直接上代码：</p>
-
-<pre><code>
-extension String {
-    var localized: String {
-        return NSLocalizedString(self, comment: self)
-    }
-}
+<pre><code class="language-bash">No errors uploading 'YOUR_APP.dmg'.
+RequestUUID = xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 </code></pre>
 
-<p>于是现在的使用方式就变成了：</p>
+<p>同时也会收到一封邮件。</p>
 
-<pre><code>
-loginButton.title = &quot;login&quot;.localized
-logoutButton.title = &quot;logout&quot;.localized
+<p>然后使用上一步的 UUID 查看状态：</p>
+
+<pre><code class="language-bash">xcrun altool --notarization-info xxxxxxxxxxxxxxxxxxxxxxxxxxxx -u &quot;APPLE_ID&quot;
 </code></pre>
 
-<p><br/>
-这样代码简洁多了，也保留了代码的自解释。
-</br>
-但，依然还有问题，如果我不小心写成了：</p>
+<p>完成后可得到成功的信息：</p>
 
-<pre><code>
-loginButton.title = &quot;login&quot;.localized
-logoutButton.title = &quot;loguot&quot;.localized
+<pre><code class="language-bash">No errors getting notarization info.
+RequestUUID: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Date: 2019-10-08 02:05:46 +0000
+Status: success
+LogFileURL: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Status Code: 0
+Status Message: Package Approved
 </code></pre>
 
-<p></br>
-编译不会报错，但logoutButton的title却出不来（注意 <strong>&ldquo;loguot&rdquo;.localized</strong>），写错一个字母，抓bug抓好长时间的经历相信很多人都遇到过吧。
-</br>
-</br>
-这里涉及到编码中的一个小技巧：<strong>不要徒手写同一个需要多次使用的字符串，尽量定义成常量进行调用。</strong>
-<br/>
-<br/>
-<br/></p>
+<p>然后开始 staple：</p>
 
-<p><a name="chapter3"></a></p>
-
-<h4 id="减少些错误"><strong>减少些错误</strong></h4>
-
-<hr />
-
-<p>还是直接上代码：</p>
-
-<pre><code>
-extension String {
-    static var localized_login: String { return &quot;login&quot;.localized }
-    static var localized_logout: String { return &quot;logout&quot;.localized }
-}
-
+<pre><code class="language-bash">xcrun stapler staple &quot;YOUR_APP.dmg&quot;
 </code></pre>
 
-<p>现在用起来就更爽了：</p>
+<p>返回：</p>
 
-<pre><code>
-loginButton.title = .localized_login
-logoutButton.title = .localized_logout
+<pre><code class="language-bash">Processing: PATH_TO_YOUR_APP.dmg
+Processing: PATH_TO_YOUR_APP.dmg
+The staple and validate action worked!
 </code></pre>
 
-<p>得益于Xcode代码提示补全的功能，我只需输入&rdquo;.&rdquo; &ldquo;login&rdquo; 回车，基本就就可以完成输入：
-<img src="https://cdn.antscript.com/@/antscript.com/upload/images/2017-08-08/localized_login.jpg" alt="localized_login.png" />
-</br>
-</br>
-乍一看，已经将写字符串时出错的概率降到最低了，但这样又要多写一堆代码，岂不是把之前好不容易提升起来的效率又降低了，再加上万一，我们在写 <strong>localized_logout</strong> 时还是写成了 <strong>&ldquo;loguot&rdquo;.localized</strong> ，这不是&rdquo;辛辛苦苦大半年，一朝回到解放前&rdquo;的节奏？
-<br/>
-<br/>
-<br/></p>
-
-<p><a name="chapter4"></a></p>
-
-<h4 id="自动化万岁"><strong>自动化万岁</strong></h4>
-
-<hr />
-
-<p>思路：使用脚本读取 <strong>Localizable.strings</strong> ，然后输出成我们需要的常量格式。</p>
-
-<p>Build Phases中新建一个 <strong>Run Script</strong>，填入以下脚本：</p>
-
-<pre><code># Localizable.strings文件路径
-localizableFile=&quot;${SRCROOT}/${PROJECT_NAME}/Support/en.lproj/Localizable.strings&quot;
-
-# 生成的swift文件路径（根据个人习惯修改）
-localizedFile=&quot;${SRCROOT}/${PROJECT_NAME}/Source/Utils/LocalizedUtils.swift&quot;
-
-touch $localizedFile
-
-# 将localizable.strings中的文本转为swift格式的常量，存入一个临时文件
-sed &quot;s/\&quot; = \&quot;.*$/;/g&quot; ${localizableFile} | sed &quot;s/.*/&amp; &amp;/&quot; | sed &quot;s/^\&quot;/  static var localized_/g&quot; | sed &quot;s/; \&quot;/: String { return \&quot;/g&quot; | sed &quot;s/;/\&quot;.localized }/g&quot; &gt; &quot;${localizedFile}.tmp&quot;
-
-# 先将localized作为计算属性输出到目标文件
-echo -e &quot;import Foundation\n\nextension String {\n  var localized: String { return NSLocalizedString(self, comment: self) }&quot; &gt; &quot;${localizedFile}&quot;
-
-# 再将临时文件中的常量增量输出到目标文件
-cat &quot;${localizedFile}.tmp&quot; &gt;&gt; &quot;${localizedFile}&quot;
-
-# 最后增量输出一个&quot;}&quot;到目标文件，完成输出
-echo -e &quot;\n}&quot; &gt;&gt; &quot;${localizedFile}&quot;
-
-# 删除临时文件
-rm &quot;${localizedFile}.tmp&quot;
-</code></pre>
-
-<p>以上脚本的作用就是将localizable.strings中的内容转换成swift的常量形式，并作为String的extension存储起来，具体步骤看注释。
-</br>
-</br>
-其中有几点需要注意：
-</br></p>
-
-<ul>
-<li>第一次运行记得将<strong>LocalizableUtils.swift</strong>加入到Xcode项目中</li>
-<li>sed的用法中，<strong>^&hellip;</strong> 表示以&hellip;开头，<strong>&hellip;$</strong> 表示以&hellip;结尾 [<a href="https://stackoverflow.com/questions/11659970/finding-and-replacing-lines-that-begin-with-a-pattern" target="_blank">参考链接</a>]。</li>
-<li><strong>&gt;</strong> 表示覆盖输出到文件，<strong>&gt;&gt;</strong> 表示增量输出到文件。</li>
-<li><strong>echo -e</strong> 表示将\n作为换行符输出（其他转义字符同效）。</li>
-<li>将 <strong>Run Script</strong> 放在 <strong>Compile Sources</strong> 的上面，这样可以在编译代码前执行，如果出现错误也很容易定位（例如Localizable.strings中行末忘记写分号）。
-</br>
-</br>
-<img src="https://cdn.antscript.com/@/antscript.com/upload/images/2017-08-08/xcode_run_script.jpg" alt="run_script" />
-</br>
-</br></li>
-</ul>
-
-<p>脚本效果：</p>
-
-<p>本地化文件：</p>
-
-<pre><code>
-# en.lproj/Localizable.strings
-
-&quot;login&quot; = &quot;Login&quot;;
-&quot;logout&quot; = &quot;Logout&quot;;
-</code></pre>
-
-<p>输出文件：</p>
-
-<pre><code>
-# LocalizedUtils.swift
-
-import Foundation
-
-extension String {
-  var localized: String { return NSLocalizedString(self, comment: self) }
-
-  static var localized_login: String { return &quot;login&quot;.localized }
-  static var localized_logout: String { return &quot;logout&quot;.localized }
-}
-</code></pre>
-
-<p>至此，我们只要在写好Localizable.strings或有修改时 <strong>⌘+B</strong> build一下，就能愉快的使用了。</p>
-
-<p>当然，如果你有其他更好的方式，欢迎邮件交流 antscript#gmail.com ：）。</p>
+<p>成功后会覆盖原始 dmg 文件，认证完成。</p>
                     </div>
                     
                     <div class="post-meta">
-                        <span class="post-date">2017-08-08 19:28:33 &#43;0800 CST</span>
+                        <span class="post-date">2019-10-03 11:26:11 &#43;0800 CST</span>
                     </div>
                     
                     
@@ -447,10 +294,10 @@ extension String {
                 <div class="clear"></div>
                 <div class="post-nav">
                     
-                    <a class="post-nav-older" title="Next post: ErgoDox小坑 - Command键失灵" href="https://antscript.com/post/2017-11-21-ergodox/">&laquo; ErgoDox小坑 - Command键失灵</a>
+                    <a class="post-nav-older" title="Next post: 04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件" href="https://antscript.com/post/2019-10-03-outside-store-04/">&laquo; 04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件</a>
                     
                     
-                    <a class="post-nav-newer" title="Previous post: [自动化之路] - 单人iOS项目的自动化实践" href="https://antscript.com/post/2017-07-07-ios-devops-1/">[自动化之路] - 单人iOS项目的自动化实践 &raquo;</a>
+                    <a class="post-nav-newer" title="Previous post: 03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件" href="https://antscript.com/post/2019-10-03-outside-store-03/">03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件 &raquo;</a>
                     
                     <div class="clear"></div>
                 </div>

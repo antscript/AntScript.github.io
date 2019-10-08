@@ -3,14 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://antscript.com/post/2019-09-16-outside-store-04/</loc>
+    <loc>https://antscript.com/post/2019-10-03-outside-store-04/</loc>
     <lastmod>2019-10-03T11:26:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://antscript.com/post/2019-09-16-outside-store-03/</loc>
+    <loc>https://antscript.com/post/2019-10-08-notarizing-mac-app/</loc>
+    <lastmod>2019-10-03T11:26:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://antscript.com/post/2019-10-03-outside-store-03/</loc>
     <lastmod>2019-10-03T11:25:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
