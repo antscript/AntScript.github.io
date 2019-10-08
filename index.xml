@@ -9,10 +9,20 @@
     <managingEditor>antscript@gmail.com (AntScript)</managingEditor>
     <webMaster>antscript@gmail.com (AntScript)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 03 Oct 2019 11:26:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Oct 2019 07:26:11 +0800</lastBuildDate>
     
 	<atom:link href="https://antscript.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>认证 Mac App (Notarization)</title>
+      <link>https://antscript.com/post/2019-10-08-notarizing-mac-app/</link>
+      <pubDate>Tue, 08 Oct 2019 07:26:11 +0800</pubDate>
+      <author>antscript@gmail.com (AntScript)</author>
+      <guid>https://antscript.com/post/2019-10-08-notarizing-mac-app/</guid>
+      <description>&lt;p&gt;随着今天 macOS Catalina(10.15) 正式版发布，Notarization 机制也开始启用，mac 商店外的 App 需要通过认证后才能得到系统的信任。
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件</title>
@@ -23,16 +33,6 @@
       <description>&lt;h1 id=&#34;制作网站&#34;&gt;制作网站&lt;/h1&gt;
 
 &lt;p&gt;制作网页两种方式，一是完全自己来写，二是使用模板来修改。对于一般性的 App 或者前端不太熟的话，使用模板来修改已经足够了。
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>认证 Mac App (Notarization)</title>
-      <link>https://antscript.com/post/2019-10-08-notarizing-mac-app/</link>
-      <pubDate>Thu, 03 Oct 2019 11:26:11 +0800</pubDate>
-      <author>antscript@gmail.com (AntScript)</author>
-      <guid>https://antscript.com/post/2019-10-08-notarizing-mac-app/</guid>
-      <description>&lt;p&gt;随着今天 macOS Catalina(10.15) 正式版发布，Notarization 机制也开始启用，mac 商店外的 App 需要通过认证后才能得到系统的信任。
 &lt;/p&gt;</description>
     </item>
     
