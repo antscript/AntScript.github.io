@@ -234,15 +234,23 @@
 
 <h1 id="command-codesign-failed-with-a-nonzero-exit-code">Command CodeSign failed with a nonzero exit code</h1>
 
-<p>导致这个错误的原因貌似有很多，stackoverflow 上这个问题下面各种都有人点 useful，总结下来主要这几个方式：
-* Clean 以后重新编译
-* Clean 以后重启电脑
-* Lock and Unloadk 钥匙串
-* 更新 pod <code>pod update [PODNAME]</code>
-* 清理钥匙串中的证书，重新安装证书
-&hellip;&hellip;</p>
+<p>导致这个错误的原因貌似有很多，stackoverflow 上这个问题下面各种都有人点 useful，总结下来主要这几个方式：</p>
 
-<p>今天尝试了各种方法均无效，想着既然是证书签名的问题，换个开发者账号试试，于是将 <strong>自动管理签名（Automatically manage signing）</strong> 关闭了，然后又重新打开，怀着侥幸心理继续选了之前的那个开发者账号，再编译，居然成功了。</p>
+<ul>
+<li>Clean 以后重新编译</li>
+<li>Clean 以后重启电脑</li>
+<li>Lock and Unloadk 钥匙串</li>
+<li>更新 pod <code>pod update [PODNAME]</code></li>
+<li>清理钥匙串中的证书，重新安装证书</li>
+</ul>
+
+<p>&hellip;&hellip;</p>
+
+<p>今天尝试了各种方法均无效，想着既然是证书签名的问题，换个开发者账号试试，于是将</p>
+
+<p><strong>自动管理签名（Automatically manage signing）</strong></p>
+
+<p>关闭了，然后又重新打开，怀着侥幸心理继续选了之前的那个开发者账号，再编译，居然通过了。</p>
 
 <p>之后安装新的 Pod，又出现了同样的问题，同样的方式试了下，成功解决。</p>
 
