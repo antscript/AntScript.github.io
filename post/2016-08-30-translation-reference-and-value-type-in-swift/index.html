@@ -11,8 +11,8 @@
     </script>
     <link href="https://antscript.com/index.xml" rel="alternate" type="application/rss+xml" title="AntScript" />
     <link href="https://antscript.com/index.xml" rel="feed" type="application/rss+xml" title="AntScript &raquo; Feed " />
-    <link rel='stylesheet' id='lingonberry_style-css' href='https://cdn.antscript.com/@/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
-    <script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
+    <link rel='stylesheet' id='lingonberry_style-css' href='https://cdn.antscript.com/antscript.com/static/v1/css/style.min.css?ver=4.0.10' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdn.antscript.com/antscript.com/static/v1/js/jquery.min.js?ver=1.10.2'></script>
     
     <style type="text/css">
     body a {
@@ -143,7 +143,7 @@
           text-indent: -99999px;
           width: 100px;
           display: block;
-          background: url(https://cdn.antscript.com/@/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
+          background: url(https://cdn.antscript.com/antscript.com/static/v1/blog/img/app.png) no-repeat 0px 0px;
           height: 100px;
           top: 0px;
           cursor: pointer;
@@ -199,7 +199,7 @@
 <div class="header section">
     <div class="header-inner section-inner">
         <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home" class="logo">
-            <img src="https://cdn.antscript.com/@/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
+            <img src="https://cdn.antscript.com/antscript.com/static/v1/img/logo.jpg" alt="AntScript">
         </a>
         <h1 class="blog-title">
                     <a href="https://antscript.com/" title="AntScript &mdash; 只想安静的做个码农" rel="home">AntScript</a>
@@ -225,7 +225,7 @@
                     <div class="post-header">
                         
                         <div class="featured-media">
-                            <img width="766" height="284" src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/title.png" class="attachment-post-image wp-post-image" alt="[译] Swift中的引用类型和值类型" />
+                            <img width="766" height="284" src="https://cdn.antscript.com/antscript.com/upload/images/20160830/title.png" class="attachment-post-image wp-post-image" alt="[译] Swift中的引用类型和值类型" />
                         </div>
                         
                         
@@ -328,20 +328,20 @@ tree.add(2)
 tree.add(13)
 </code></pre>
 
-<p><img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/2.jpeg" alt="一个二叉树实例" />
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/2.jpeg" alt="一个二叉树实例" />
 现在，我们来看一下复制语意在行为上的区别。</p>
 
 <h4 id="浅拷贝-引用类型"><strong>浅拷贝（引用类型）</strong></h4>
 
 <p>复制一个引用类型时，Swift编译器将会复制实例的一个引用。但不包含实例的属性。因此，当对一个引用类型进行多次复制时，每一份复制都将共享同一份数据。</p>
 
-<p><img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/3.jpeg" alt="二叉树浅拷贝" /></p>
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/3.jpeg" alt="二叉树浅拷贝" /></p>
 
 <h4 id="深拷贝-值类型"><strong>深拷贝(值类型)</strong></h4>
 
 <p>当我们复制一个值类型时，Swift编译器将复制一个全新的实例，包括它的所有属性。整个过程会复制它所有的值类型属性。因此，当对一个值类型进行多次复制时，每次复制都会产生一个单独的、没有数据共享的新实例。</p>
 
-<p><img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/4.jpeg" alt="二叉树深拷贝" /></p>
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/4.jpeg" alt="二叉树深拷贝" /></p>
 
 <p><a name="chapter4"></a></p>
 
@@ -369,13 +369,13 @@ var pointB = pointA
 
 <p>因为 <strong>PointClass</strong> 是一个引用类型，最后一句的变量声明实际上是把分配给pointA的引用也分配给了pointB。我们可以用下面的图来形象的描述上述情形：</p>
 
-<p><img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/5.png" alt="Reference type instances" /></p>
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/5.png" alt="Reference type instances" /></p>
 
 <p>在这种情形下，pointA和pointB <strong>共享</strong> 同一个实例。因此，任何对pointA的改变也将反应到pointB上，反之亦然。这在很多情况下没什么问题，但它也会导致一些不太显而易见的bug。</p>
 
 <p>让我们来看一个很普遍的隐式数据共享问题。假设实例化了一个 view controller 1，并分配了一个 <strong>Person</strong> 对象（Person是一个model）的实例给它。这时，用户进行操作，我们push了另一个 view controller 2 到上一个 view controller 1 的上面，并把分配了同一个Person的引用实例给 view controller 2。我们可以想象下图这样的特殊情景：</p>
 
-<p><img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/6.jpeg" alt="Assigning a reference type to more than one view controller
+<p><img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/6.jpeg" alt="Assigning a reference type to more than one view controller
 " /></p>
 
 <p>当两个 view controller 同时持有Person实例的用一个引用，如果我们在 view controlelr 2 中修改了Person的任何属性，将导致之前 view controller 1 中所持有Person的属性也同时被修改。因此，在view controller 2 中对数据模型的修改都将传递到 view controller 1 中。</p>
@@ -425,7 +425,7 @@ var pointB = pointA
 </code></pre>
 
 <p>因为 <strong>PointStruct</strong> 是值类型， 最后一行的声明会先创建一个PointA的拷贝，并将拷贝分配给了PointB。这就使得两个实例分配是安全并独立的。上述情形图示如下：
-<img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/7.png" alt="Values type instances
+<img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/7.png" alt="Values type instances
 " /></p>
 
 <p>我们看到 pointB 有它自己独立的引用，并且不会被 pointA 共享。这表明了使用值类型时，我们可以很容易的确保所有值类型的实例都是相互独立并且不会产生数据共享的。</p>
@@ -473,7 +473,7 @@ let personViewB = personViewA
 </code></pre>
 
 <p>由于 view 是引用类型，这将导致两个 PersonView 的实例共享了同一个 view 属性！所以当我们修改 view 的属性时，实际上最终修改的是 共享的 view 。通过下图可以更容易理解，再一次，我们又回到了隐式共享数据的问题讨论：
-<img src="https://cdn.antscript.com/@/antscript.com/upload/images/20160830/8.jpeg" alt="Value type containing a reference type
+<img src="https://cdn.antscript.com/antscript.com/upload/images/20160830/8.jpeg" alt="Value type containing a reference type
 " /></p>
 
 <p><a name="chapter6"></a></p>
@@ -620,7 +620,7 @@ let personViewB = personViewA
     </div>
     
 </div>
-<script type='text/javascript' src='https://cdn.antscript.com/@/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
+<script type='text/javascript' src='https://cdn.antscript.com/antscript.com/static/v1/js/global.js?ver=4.0.10'></script>
 <div style="display:none"><script src="https://s4.cnzz.com/stat.php?id=1258630582&web_id=1258630582" language="JavaScript"></script></div>
 
 
