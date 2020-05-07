@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="https://antscript.com/favicon.ico" type="image/x-icon">
-    <title>04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件 | 只想安静的做个码农</title>
+    <title>You are not authorized to make purchases of this InApp in Sandbox at this time | 只想安静的做个码农</title>
     <script>
     document.documentElement.className = document.documentElement.className.replace("no-js", "js");
     </script>
@@ -219,148 +219,26 @@
         <div class="posts">
             <div id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-develop">
                 <div class="post-bubbles">
-                    <a href="https://antscript.com/post/2019-10-03-outside-store-04/" class="format-bubble" title="04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件"></a>
+                    <a href="https://antscript.com/post/2020-03-04-You-are-not-authorized-to-make-purchases-of-this-InApp-in-Sandbox-at-this-time/" class="format-bubble" title="You are not authorized to make purchases of this InApp in Sandbox at this time"></a>
                 </div>
                 <div class="content-inner">
                     <div class="post-header">
                         
-                        <div class="featured-media">
-                            <img width="766" height="284" src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/outside_store_title.png" class="attachment-post-image wp-post-image" alt="04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件" />
-                        </div>
                         
-                        
-                        <h2 class="post-title">04. 网站搭建（二） | 手把手教你在 Mac App Store 之外销售软件</h2>
+                        <h2 class="post-title">You are not authorized to make purchases of this InApp in Sandbox at this time</h2>
                     </div>
                     
                     <div class="post-content">
-                        <h1 id="制作网站">制作网站</h1>
-
-<p>制作网页两种方式，一是完全自己来写，二是使用模板来修改。对于一般性的 App 或者前端不太熟的话，使用模板来修改已经足够了。
+                        <p>新的 macOS 应用里用到内购，加了一个 sandbox 的测试账号，测试时死活卡在 <code>You are not authorized to make purchases of this InApp in Sandbox at this time</code> 无法继续&hellip;
 </p>
 
-<h2 id="使用模板制作-landing-page">使用模板制作 Landing Page</h2>
+<h1 id="you-are-not-authorized-to-make-purchases-of-this-inapp-in-sandbox-at-this-time">You are not authorized to make purchases of this InApp in Sandbox at this time</h1>
 
-<p>直接 Google <strong>landing page template</strong> 就会出来很多，找一个喜欢的自己修改一下即可，<strong>但要注意某些模板的协议是需要在页脚保留其签名的。</strong></p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-1.png" alt="image-20190709085242678" /></p>
-
-<p>我们在第一个结果（<a href="https://colorlib.com/wp/cat/landing-page/">https://colorlib.com/wp/cat/landing-page/</a> &ldquo;Landing Page&rdquo;）里面找一个合适的模板，看下使用协议，免费使用的话允许商用但不能移除页脚的信息，想要移除的话需要购买一份授权：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-2.png" alt="image-20190709090019622" /></p>
-
-<p>下载下来，修改一下内容、配色、图片等，这样我们网站的静态文件就准备好了：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-3.png" alt="image-20190709195211509" /></p>
-
-<p>接下来我们来看服务器相关的配置。</p>
-
-<h1 id="服务器配置">服务器配置</h1>
-
-<h2 id="配置-nginx">配置 NginX</h2>
-
-<p>我们使用 <code>scp -r</code> 命令将文件夹传输到服务器上：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-4.png" alt="image-20190709112324617" /></p>
-
-<p>登入服务器，编辑配置文件，这里涉及 Vi （服务器自带的文本编辑器）的基本使用，不会的可以学习下，或者将文件 scp 下载下来编辑好再传输到服务器：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-5.png" alt="image-20190709112659840" /></p>
-
-<p>将默认的 NginX 的 root 目录改为我们的网站目录地址：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-6.png" alt="image-20190709122214495" /></p>
-
-<p>保存并重启 NginX：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-7.png" alt="image-20190709122405718" /></p>
-
-<p>浏览器里访问我们服务器的 IP，看到已经可以访问网页了：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-8.png" alt="image-20190709195025888" /></p>
-
-<h2 id="域名解析及https配置">域名解析及HTTPS配置</h2>
-
-<p>这里我们使用 <strong>CloudFlare</strong> 的免费服务进行域名解析、 CDN加速以及开启 HTTPS。</p>
-
-<p>打开 <a href="https://www.cloudflare.com">https://www.cloudflare.com</a> ，点击 <strong>Sign Up</strong> 进行注册：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-9.png" alt="image-20190709132604341" /></p>
-
-<p>输入自己的域名进行加速：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-10.png" alt="image-20190709132848697" /></p>
-
-<p>选择免费的服务即可：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-11.png" alt="image-20190709132912337" /></p>
-
-<p>配置两条 A 记录指向服务器的 IP：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-12.png" alt="image-20190709141328165" /></p>
-
-<p>提示我们要将 DNS 服务器指向 CloudFlare，复制这两个地址：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-13.png" alt="image-20190709133312518" /></p>
-
-<p>登入 NameCheap，进入域名管理：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-14.png" alt="image-20190709134113254" /></p>
-
-<p>修改 Nameservers：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-15.png" alt="image-20190709135424361" /></p>
-
-<p>回到 CloudFlare，验证修改：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-16.png" alt="image-20190709135727417" /></p>
-
-<p>如果没有生效，可等一小时后再验证：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-17.png" alt="image-20190709135851483" /></p>
-
-<p>当显示这个信息的时候则表示成功了：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-18.png" alt="image-20190709140837134" /></p>
-
-<p>上一步没完成没关系，先进行 HTTPS 的配置，切到 <strong>Crypto</strong> 面板：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-19.png" alt="image-20190709140645191" /></p>
-
-<p>首先把 SSL 改为 Full，表示自动使用 https 访问：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-20.png" alt="image-20190709165708899" /></p>
-
-<p>其中几种不同的加密模式区别如下：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-21.png" alt="image-20190709165823606" /></p>
-
-<p>打开 https 自动跳转：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-22.png" alt="image-20190709170614007" /></p>
-
-<p>稍等几分钟，等各种设置都生效以后直接用我们的域名访问：</p>
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/4-23.png" alt="image-20190709194951388" /></p>
-
-<p>至此，我们的网站就搭建完成了，其中还有很多网页优化以及服务器配置的技巧，留待大家自行学习。</p>
-
-<h2 id="额外建议">额外建议</h2>
-
-<ul>
-<li>网站可用性监控</li>
-<li>网站访问统计</li>
-<li>网站备份</li>
-</ul>
-
-<hr />
-
-<p><img src="https://cdn.antscript.com/antscript.com/upload/images/outsidestore/qr.jpeg" alt="img" /></p>
-
-<p>关注【代码内外】公众号，获取最新文章。</p>
+<p>Google了各种方法试过来均无效，其间重新创建了 N 个新的 sandbox 测试账号也是没用，后来仔细阅读了 sandbox 测试账号的说明，原来 sandbox 测试账号也是一个正常的 Apple ID，之前一直以为只是一个假账号，于是<strong>去 Apple ID 页面登录账号后，发现要设置几个密保问题，设置完成后，sandbox 的测试账号就正常了</strong>。</p>
                     </div>
                     
                     <div class="post-meta">
-                        <span class="post-date">2019-10-03 11:26:11 &#43;0800 CST</span>
+                        <span class="post-date">2020-03-04 22:20:11 &#43;0800 CST</span>
                     </div>
                     
                     
@@ -369,10 +247,8 @@
                 <div class="clear"></div>
                 <div class="post-nav">
                     
-                    <a class="post-nav-older" title="Next post: 认证 Mac App (Notarization)" href="https://antscript.com/post/2019-10-08-notarizing-mac-app/">&laquo; 认证 Mac App (Notarization)</a>
                     
-                    
-                    <a class="post-nav-newer" title="Previous post: 03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件" href="https://antscript.com/post/2019-10-03-outside-store-03/">03. 网站搭建（一） | 手把手教你在 Mac App Store 之外销售软件 &raquo;</a>
+                    <a class="post-nav-newer" title="Previous post: Command CodeSign failed with a nonzero exit code" href="https://antscript.com/post/2019-11-05-Command-CodeSign-failed-with-a-nonzero-exit-code/">Command CodeSign failed with a nonzero exit code &raquo;</a>
                     
                     <div class="clear"></div>
                 </div>
